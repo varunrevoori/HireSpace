@@ -4,7 +4,7 @@ import { Brain, ShieldCheck, BarChart3, Mail, PhoneCall, Globe } from "lucide-re
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="Contact">
       {/* Features Section */}
       <div className="footer-features">
         <div className="feature">

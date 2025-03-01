@@ -1,23 +1,122 @@
-.login-popup{
-    position:absolute;
-    z-index:1;
-    width:100%;
-    height: 100%;
-    background-color:#00000090;
-    display:grid;
+
+.user-type-selection {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 1px 0;
+    flex-wrap: wrap;  /* Allows wrapping on smaller screens */
 }
-.login-popup-container{
-    place-self:center;
-    width:max(23vw,330px);
-    color:#808080;
+
+.user-type-selection label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    border: 2px solid #4a90e2;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    color: #4a90e2;
+    background-color: #f5f7fa;
+    text-align: center;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 600px) {
+    .user-type-selection {
+        flex-direction: row; /* Stack vertically */
+        gap: 10px;
+    }
+
+    .user-type-selection label {
+        width: 40%; /* Make buttons full-width */
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .user-type-selection input {
+        transform: scale(1.1); /* Adjust size */
+    }
+    
+}
+
+
+/* Adjustments for tablets */
+@media (max-width: 900px) {
+    .user-type-selection {
+        gap: 10px;
+    }
+
+    .user-type-selection label {
+        font-size: 15px;
+        padding: 8px 12px;
+    }
+}
+
+.user-type-selection input {
+    accent-color: #4a90e2;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.user-type-selection label:hover {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.user-type-selection input:checked + label {
+    background-color: #4a90e2;
+    color: white;
+    border-color: #357ABD;
+}
+
+  .State{
+    color:#357ABD;
+    margin-bottom:-10px
+  }
+
+  .login-popup {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #00000090;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.login-popup-container {
+    width: max(35vw, 350px);
+    max-height: 90vh; /* Restrict height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    color: #808080;
     background-color: white;
     display: flex;
     flex-direction: column;
-    gap:25px;
-    padding:25px 30px;
+    gap: 25px;
+    padding: 25px 30px;
     border-radius: 8px;
-    font-size:14px;
-    animation:fadeIn 0.5s;
+    font-size: 14px;
+    animation: fadeIn 0.5s;
+    margin: 5px 0;
+}
+
+/* Hide scrollbar for better aesthetics */
+.login-popup-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.login-popup-container::-webkit-scrollbar-thumb {
+    background-color: #c9c9c9;
+    border-radius: 10px;
+}
+
+.login-popup-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
 }
 .login-pop-title{
     display: flex;
@@ -44,7 +143,7 @@
 .login-popup-container button{
     border:none;
     color:white;
-    background-color: tomato;
+    background-color: #256aaf;
     cursor: pointer;
     padding:10px;
     font-size:15px;  
@@ -61,8 +160,11 @@
     margin-top: 5px;
 }
 .login-popup p span{
-    color:tomato;
+    color: #256aaf;
     font-weight: 500;
     cursor: pointer;
-
+}
+.last{
+    margin-top:-25px;
+    margin-bottom:-10px;
 }
