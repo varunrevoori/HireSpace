@@ -1,0 +1,136 @@
+### Student Registration
+POST http://localhost:5001/apis/students/register
+Content-Type: application/json
+
+{
+    "userType": "student",
+    "username": "student12",
+    "email": "student12@gmail.com",
+    "password": "password123",
+    "skills": ["JavaScript", "React"],
+    "education": ["BSc in Computer Science"],
+    "projects": ["Project A", "Project B"]
+}
+
+### Student Login
+POST http://localhost:5001/apis/students/login
+Content-Type: application/json
+
+{
+    "email": "student12@gmail.com",
+    "password": "password123"
+}
+
+### Company Registration
+POST http://localhost:5001/apis/companies/register
+Content-Type: application/json
+
+{
+    "userType": "company",
+    "email": "company@example.com",
+    "password": "securepass@!23",
+    "companyName": "Example Company",
+    "location": "New York, USA",
+    "description": "A tech company specializing in web development.",
+    "website": "https://www.examplecompany.com"
+}
+
+### Company Login
+POST http://localhost:5001/apis/companies/login
+Content-Type: application/json
+
+{
+    "email": "company@example.com",
+    "password": "securepass@!23"
+}
+
+### Admin Registration
+POST http://localhost:5001/apis/admin/register
+Content-Type: application/json
+
+{
+    "userType": "admin",
+    "email": "admin@example.com",
+    "password": "adminPass123"
+}
+
+### Admin Login
+POST http://localhost:5001/apis/admin/login
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "adminPass123"
+}
+
+### Create a Hackathon
+POST http://localhost:5001/apis/hackathons/create
+Content-Type: application/json
+
+{
+    "title": "AI Challenge",
+    "problemStatement": "Build an AI model for image recognition.",
+    "domain": "AI",
+    "companyId": "60d21b4667d0d8992e610c85",
+    "deadline": "2025-04-30"
+}
+
+### Get All Hackathons
+GET http://localhost:5001/apis/hackathons
+
+### Get a Single Hackathon by ID
+GET http://localhost:5001/apis/hackathons/60d21b4667d0d8992e610c85
+
+### Participate in a Hackathon
+POST http://localhost:5001/apis/hackathons/participate
+Content-Type: application/json
+
+{
+    "studentId": "60d21b4967d0d8992e610c86",
+    "hackathonId": "60d21b4667d0d8992e610c85",
+    "gitRepository": "https://github.com/student/hackathon-project"
+}
+
+### Submit Hackathon Solution
+POST http://localhost:5001/apis/hackathons/submit
+Content-Type: application/json
+
+{
+    "studentId": "60d21b4967d0d8992e610c86",
+    "hackathonId": "60d21b4667d0d8992e610c85",
+    "gitRepository": "https://github.com/student/hackathon-project"
+}
+
+### Get Hackathon Leaderboard
+GET http://localhost:5001/apis/hackathons/leaderboard/60d21b4667d0d8992e610c85
+
+### Create a Job
+POST http://localhost:5001/apis/jobs/create
+Content-Type: application/json
+
+{
+    "title": "Software Engineer",
+    "companyId": "60d21b4667d0d8992e610c85",
+    "description": "Develop web applications using React and Node.js.",
+    "requirements": ["React", "Node.js"],
+    "location": "Remote",
+    "salary": "100000"
+}
+
+### Get All Jobs
+GET http://localhost:5001/apis/jobs
+
+### Get Job by ID
+GET http://localhost:5001/apis/jobs/60d21b4667d0d8992e610c85
+
+### Apply for a Job
+POST http://localhost:5001/apis/jobs/apply
+Content-Type: application/json
+
+{
+    "student": "60d21b4967d0d8992e610c86",
+    "job": "60d21b4667d0d8992e610c85"
+}
+
+### Get All Job Applications for a Company
+GET http://localhost:5001/apis/jobs/applications/60d21b4667d0d8992e610c85

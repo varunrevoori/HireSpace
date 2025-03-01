@@ -1,8 +1,9 @@
 const express = require('express');
 const expressAsyncHandler = require('express-async-handler');
-const JobApplication = require('../models/JobApplication');
-const Student = require('../models/Student');
-const Job = require('../models/Job');
+const JobApplication = require('../models/jobstatusmodel');
+const Student = require('../models/studentmodel');
+const job=require('../models/jobmodel')
+
 
 const jobAppRouter = express.Router();
 
