@@ -1,10 +1,14 @@
 .header{
     height:34vw;
-    margin:30px auto;
+    margin-top:20px;
+    margin-bottom:-90px;
     background: url("../../Assets/About.jpg") no-repeat;
     background-size:contain;
     position: relative;
 }
+.carousel::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar in Chrome, Safari, and Opera */
+  }
 
 .header-contents{
     position:absolute;
