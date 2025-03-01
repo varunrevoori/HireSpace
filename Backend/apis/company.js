@@ -15,28 +15,41 @@ companyApp.post('/register', expressAsyncHandler(async (req, res) => {
         return res.status(400).json({ message: 'All required fields must be filled' });
     }
 
+    // Check if email already exists
     const existingCompany = await Company.findOne({ email });
     if (existingCompany) {
         return res.status(400).json({ message: 'Email is already taken' });
     }
 
+    // Generate a unique companyId
+    const companyId = `COMP-${Date.now()}`;
+
     const hashedPassword = await bcrypt.hash(password, 10);
-    const newCompany = new Company({ userType, email, password: hashedPassword, companyName, location, description, website });
+    const newCompany = new Company({
+        userType,
+        companyId, // Adding companyId
+        email,
+        password: hashedPassword,
+        companyName,
+        location,
+        description,
+        website
+    });
 
     await newCompany.save();
-    res.status(201).json({ message: 'Company registered successfully' });
+    res.status(201).json({ message: 'Company registered successfully', companyId });
 }));
 
 // Company Login
 companyApp.post('/login', expressAsyncHandler(async (req, res) => {
     const { email, password } = req.body;
 
-    const dbUser = await Company.findOne({ email });
-    if (!dbUser) {
+    const dbCompany = await Company.findOne({ email });
+    if (!dbCompany) {
         return res.status(401).json({ message: 'Invalid email' });
     }
 
-    const isPasswordCorrect = await bcrypt.compare(password, dbUser.password);
+    const isPasswordCorrect = await bcrypt.compare(password, dbCompany.password);
     if (!isPasswordCorrect) {
         return res.status(401).json({ message: 'Incorrect password' });
     }
@@ -46,12 +59,19 @@ companyApp.post('/login', expressAsyncHandler(async (req, res) => {
     }
 
     const token = jwt.sign(
-        { userId: dbUser._id, email: dbUser.email, userType: dbUser.userType },
+        { companyId: dbCompany.companyId, email: dbCompany.email, userType: dbCompany.userType },
         process.env.SECRET_KEY,
         { expiresIn: '1d' }
     );
 
-    res.json({ message: 'Login successful', token, user: { email: dbUser.email, userType: dbUser.userType } });
+    res.json({ 
+        message: 'Login successful', 
+        token, 
+        company: { 
+            companyId: dbCompany.companyId, // Returning companyId in response
+            email: dbCompany.email
+        } 
+    });
 }));
 
 module.exports = companyApp;

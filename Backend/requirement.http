@@ -27,13 +27,14 @@ Content-Type: application/json
 
 {
     "userType": "company",
-    "email": "company@example.com",
+    "email": "company@exampe.com",
     "password": "securepass@!23",
     "companyName": "Example Company",
     "location": "New York, USA",
     "description": "A tech company specializing in web development.",
     "website": "https://www.examplecompany.com"
 }
+
 
 ### Company Login
 POST http://localhost:5001/apis/companies/login

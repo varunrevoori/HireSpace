@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const CompanySchema = new mongoose.Schema({
     userType: { type: String, enum: ['company'], required: true },
+    companyId: { type: String, required: true, unique: true }, // Unique Company ID
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true },
     companyName: { type: String, required: true },

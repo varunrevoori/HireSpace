@@ -1,25 +1,32 @@
 const mongoose = require('mongoose');
 
 const HackathonProfileSchema = new mongoose.Schema({
-    studentId: { type: mongoose.Schema.Types.ObjectId, ref: 'Student', required: true, unique: true },
-    
+    username: { 
+        type: String, 
+        required: true, 
+        unique: true, 
+        trim: true,
+        index: true // Improves query performance
+    },
+
     participatedHackathons: [{ 
-        hackathonId: { type: mongoose.Schema.Types.ObjectId, ref: 'Hackathon' },
-        gitRepository: { type: String }, // GitHub repo link
-        gitScore: { type: Number, default: 0 }, // Git-based scoring
-        domainScore: { type: Number, default: 0 }, // Domain-specific score
-        submissionDate: { type: Date, default: Date.now } // Date of participation
+        hackathonId: { type: mongoose.Schema.Types.ObjectId, ref: 'Hackathon', required: true },
+        gitRepository: { type: String, trim: true }, // Trim spaces for consistency
+        gitScore: { type: Number, default: 0, min: 0 }, // Prevents negative scores
+        domainScore: { type: Number, default: 0, min: 0 }, // Prevents negative scores
+        submissionDate: { type: Date, default: Date.now } 
     }], 
     
     domainScores: { type: Map, of: Number, default: {} }, // Tracks cumulative domain-wise scores
     
-    gitScore: { type: Number, default: 0 }, // Overall Git score
-    totalHackathonsParticipated: { type: Number, default: 0 }, // Number of hackathons participated
-    totalHackathonScore: { type: Number, default: 0 }, // Total calculated score
-    ranking: { type: Number, default: 0 }, // Global ranking (can be updated dynamically)
-    badges: [{ type: String }], // Achievements like "Top Performer", "Best Code Quality"
+    gitScore: { type: Number, default: 0, min: 0 }, // Overall Git score
+    totalHackathonsParticipated: { type: Number, default: 0, min: 0 }, // Auto-updates
+    totalHackathonScore: { type: Number, default: 0, min: 0 }, // Auto-updates
+    ranking: { type: Number, default: 0, min: 0 }, // Global ranking
     
-    finalScore: { type: Number, default: 0 } // Final computed score
+    badges: [{ type: String, trim: true }], // Trim spaces in badge names
+    
+    finalScore: { type: Number, default: 0, min: 0 } // Final computed score
 }, { timestamps: true });
 
 // Middleware to calculate final score dynamically

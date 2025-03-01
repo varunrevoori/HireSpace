@@ -15,9 +15,15 @@ studentApp.post('/register', expressAsyncHandler(async (req, res) => {
         return res.status(400).json({ message: 'All required fields must be filled' });
     }
 
-    const existingUser = await Student.findOne({ email });
+    // Check if username or email already exists
+    const existingUser = await Student.findOne({ $or: [{ email }, { username }] });
     if (existingUser) {
-        return res.status(400).json({ message: 'User already exists' });
+        if (existingUser.email === email) {
+            return res.status(400).json({ message: 'Email is already taken' });
+        }
+        if (existingUser.username === username) {
+            return res.status(400).json({ message: 'Username is already taken' });
+        }
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
