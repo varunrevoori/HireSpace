@@ -139,7 +139,7 @@ function Features (){
   ];
 
   return (
-    <section className="features-section">
+    <section className="features-section" id="About">
       <div className="container">
         <div className="section-header">
           <h2>Your Complete Career Toolkit</h2>

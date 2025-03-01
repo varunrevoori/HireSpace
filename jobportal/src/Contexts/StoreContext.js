@@ -4,6 +4,7 @@ export const storeContext = createContext(null);
 
 function StoreContextProvider(props) {
     const [token, setToken] = useState("");
+    const url="http://localhost:3000"
 
     useEffect(() => {
         // Preserve login state on page reload
@@ -16,6 +17,7 @@ function StoreContextProvider(props) {
     const contextValue = {
         token,
         setToken,
+        url
     };
 
     return (

@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import logo from "../../Assets/logo.png";
+import { useNavigate } from "react-router-dom"; 
 
-const Navbar = () => {
+
+function Navbar ({setShowLogin}) {
   const [menu, setMenu] = useState("Home");
+  const navigate = useNavigate();
+
+
 
   return (
     <nav className="navbar">
-      <img className="nav-logo" src={logo} alt="Logo" />
+      <img className="nav-logo" onClick={() => navigate("/")}  src={logo} alt="Logo" />
       <ul className="nav-links">
         <li>
           <a
@@ -46,7 +51,7 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <button className="login-btn">Login</button>
+      <button className="login-btn" onClick={()=>setShowLogin(true)}>Login</button>
     </nav>
   );
 };
