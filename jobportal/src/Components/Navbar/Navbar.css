@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(120deg, #1e1e2e, #312e81);
+    color: white;
+    color: white;
+    padding: 5px 20px;
+}
+
+.nav-logo {
+    height:70px;
+    width:200px;
+    cursor:pointer;
+    padding-left:50px;
+}
+.navbar .active{
+    padding-bottom: 2px;
+    border-bottom: 2px solid white ;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.8em;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 20px;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+/* Ensuring proper alignment of anchor tags */
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em; /* Increased size */
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 8px 8px; /* Adding padding for alignment */
+}
+
+/* Login Button */
+.login-btn {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-right: 30px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: center; /* Center items in mobile view */
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: linear-gradient(120deg, #1e1e2e, #312e81);
+        width: 200px;
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px;
+    }
+}
+
+
+/* On Hover */
+.login-btn:hover {
+    background: white;
+    color: #312e81;
+}
+
+/* On Click */
+.login-btn:active {
+    background: white;
+    color: black;
+}
+
+
+.nav-links .login {
+    padding: 8px 12px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.nav-links .login:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 530px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: linear-gradient(120deg, #1e1e2e, #312e81);  
+        width: 200px;
+        text-align: center;
+        padding: 15px;
+        border-radius: 5px;
+        align-items: center; 
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+}
+
+/* Responsive font size */
+@media screen and (max-width: 1024px) {
+    .nav-links li a {
+        font-size: 1.1em; /* Slightly smaller on medium screens */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links li a {
+        font-size: 1em; /* Normal size for mobile */
+    }
+}

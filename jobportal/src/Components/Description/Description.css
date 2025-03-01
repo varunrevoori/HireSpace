@@ -1,0 +1,49 @@
+.header{
+    height:34vw;
+    margin:30px auto;
+    background: url("../../Assets/About.jpg") no-repeat;
+    background-size:contain;
+    position: relative;
+}
+
+.header-contents{
+    position:absolute;
+    display:flex;
+    flex-direction:column;
+    align-items:start;
+    gap:1.5vw;
+    max-width:70%;
+    padding-top:25px;
+    left:6vw;
+    animation: fadeIn 3s;
+}
+.header-contents h2{
+    font-weight: 500;
+    font-size:max(4.3vw,22px);
+    color:white
+}
+.header-contents p{
+    font-size: max(1.5vw, 15px); /* Increase paragraph size */
+    color: white;
+    line-height: 1.5; /* Improve readability */
+}
+
+
+@media (max-width:380px){
+    .header-contents{
+        max-width:75%;
+    }
+    .header-contents p{
+        display: none;
+    }
+
+}
+@media (max-width:650px){
+    .header-contents{
+        max-width:65%;
+    }
+    .header-contents p{
+        font-size: max(1.3vw, 10px);
+    }
+
+}

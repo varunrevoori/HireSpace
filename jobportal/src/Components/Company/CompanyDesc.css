@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+  
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+  }
+  
+  .company-card {
+    min-width: 280px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+  }
+  
+  .logo-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .logo-img {
+    max-height: 50px;
+    max-width: 150px;
+  }
+  
+  .datamatics-logo {
+    background-color: #c00;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  .stars {
+    color: #ffc107;
+    margin-right: 4px;
+  }
+  
+  .rating-value {
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  
+  .reviews {
+    color: #666;
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+  
+  .view-jobs-btn {
+    display: inline-block;
+    background-color: #e6f2ff;
+    color: #0066ff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s;
+  }
+  
+  .view-jobs-btn:hover {
+    background-color: #d9e9ff;
+  }
+  
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  .nav-btn i {
+    color: #333;
+  }
+  
+  .nav-btn:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .company-card {
+      min-width: 240px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .company-card {
+      min-width: 220px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    .container {
+      padding: 0 10px;
+    }
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+  }
+  
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    padding: 10px 0;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+  
+  .company-card {
+    min-width: 280px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+  }
+  
+  .logo-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .logo-img {
+    max-height: 50px;
+    max-width: 150px;
+  }
+  
+  .datamatics-logo {
+    background-color: #c00;
+    color: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  
+  .stars {
+    color: #ffc107;
+    margin-right: 4px;
+  }
+  
+  .rating-value {
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  
+  .reviews {
+    color: #666;
+  }
+  
+  .description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 24px;
+    line-height: 1.4;
+    flex-grow: 1;
+  }
+  
+  .view-jobs-btn {
+    display: inline-block;
+    background-color: #e6f2ff;
+    color: #0066ff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.2s;
+  }
+  
+  .view-jobs-btn:hover {
+    background-color: #d9e9ff;
+  }
+  
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  .nav-btn i {
+    color: #333;
+  }
+  
+  .nav-btn:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .company-card {
+      min-width: 240px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .company-card {
+      min-width: 220px;
+    }
+  
+    h1 {
+      font-size: 22px;
+    }
+  
+    .container {
+      padding: 0 10px;
+    }
+  }
+  
+    
