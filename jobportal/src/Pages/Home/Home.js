@@ -11,13 +11,21 @@ function Home() {
     <div className="home-container">
       <Navbar />
       <div className="content">
-        <Descriptions />
-        <Features />
-        <CompanyDesc/>
+        <div id="Home">
+          <Descriptions />
+        </div>
+        <div id="About">
+          <Features />
+        </div>
+        <div id="Services">
+          <CompanyDesc />
+        </div>
+        <div id="Contact">
+          <Footer />
+        </div>
       </div>
-      <Footer />
     </div>
-  )
+  );
 }
 
 export default Home
