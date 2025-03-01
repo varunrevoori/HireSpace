@@ -102,36 +102,35 @@ Content-Type: application/json
     "gitRepository": "https://github.com/student/hackathon-project"
 }
 
-### Get Hackathon Leaderboard
-GET http://localhost:5001/apis/hackathons/leaderboard/60d21b4667d0d8992e610c85
-
-### Create a Job
-POST http://localhost:5001/apis/jobs/create
+### craete the job for students by the company
+post http://localhost:5001/apis/jobs/create
 Content-Type: application/json
 
-{
+ {
+
+
+   "jobId": "fca30b31-35a3-4ebc-819b-254adc07fc62",
     "title": "Software Engineer",
-    "companyId": "60d21b4667d0d8992e610c85",
+   "companyName": "Example Company",
+    "companyId": "COMP-1740835542137",
+    "location": "india",
     "description": "Develop web applications using React and Node.js.",
-    "requirements": ["React", "Node.js"],
-    "location": "Remote",
-    "salary": "100000"
+    "skillsRequired": ["React", "Node.js"],
+    "jobType": "Full-time",
+    "experience": "2+ years",
+    "salaryRange": "100000"
+
 }
-
-### Get All Jobs
-GET http://localhost:5001/apis/jobs
-
-### Get Job by ID
-GET http://localhost:5001/apis/jobs/60d21b4667d0d8992e610c85
-
-### Apply for a Job
+####applying for the job
 POST http://localhost:5001/apis/jobs/apply
 Content-Type: application/json
 
 {
-    "student": "60d21b4967d0d8992e610c86",
-    "job": "60d21b4667d0d8992e610c85"
+    "username": "student12",
+    "jobId": "fca30b31-35a3-4ebc-819b-254adc07fc62",
+    "resumeUrl": "https://drive.google.com/file/d/resume123/view"
 }
+
 
 ### Get All Job Applications for a Company
 GET http://localhost:5001/apis/jobs/applications/60d21b4667d0d8992e610c85

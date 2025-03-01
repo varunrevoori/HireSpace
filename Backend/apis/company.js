@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const expressAsyncHandler = require('express-async-handler');
 const Company = require('../models/companymodel');
 require('dotenv').config();
+const { v4: uuidv4 } = require('uuid');
+const Job = require('../models/jobmodel');
 
 const companyApp = express.Router();
 
@@ -73,5 +75,39 @@ companyApp.post('/login', expressAsyncHandler(async (req, res) => {
         } 
     });
 }));
+// companyApp.post('/create', expressAsyncHandler(async (req, res) => {
+//     console.log("📩 Job creation request received:", req.body);
 
+//     const { title,companyName,companyId, location, description, skillsRequired, jobType, experience, salaryRange } = req.body;
+//     console.log(req.body);
+
+//     // Validate required fields
+//     if (!companyId || !companyName || !title || !location || !description || !skillsRequired || !jobType || !experience || !salaryRange) {
+//         return res.status(400).json({ message: 'All required fields must be filled' });
+//     }
+
+//     // Generate a unique Job ID
+//     const jobId = uuidv4();
+
+//     // Create a new job entry
+//     const newJob = new Job({
+//         jobId,
+//         title,
+//         companyName,
+//         companyId,
+//         location,
+//         description,
+//         skillsRequired,
+//         jobType,
+//         experience,
+//         salaryRange
+//     });
+
+//     // Save job to database
+//     await newJob.save();
+
+//     console.log("✅ Job created successfully:", newJob);
+
+//     res.status(201).json({ message: 'Job created successfully', job: newJob });
+// }));
 module.exports = companyApp;
