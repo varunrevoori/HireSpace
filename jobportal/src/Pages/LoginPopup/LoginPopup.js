@@ -31,7 +31,7 @@ function LoginPopup({ setShowLogin }) {
 
   const onLogin = async (event) => {
     event.preventDefault();
-    let newUrl = url + `/api/${userType.toLowerCase()}/${currState === "Login" ? "login" : "register"}`;
+    let newUrl = url + `/apis/${userType.toLowerCase()}/${currState === "Login" ? "login" : "register"}`;
     
     const response = await axios.post(newUrl, data);
     
