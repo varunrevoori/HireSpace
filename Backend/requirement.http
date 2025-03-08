@@ -1,5 +1,5 @@
 ### Student Registration
-POST http://localhost:5001/apis/students/register
+POST http://localhost:5001/apis/student/register
 Content-Type: application/json
 
 {
@@ -13,7 +13,7 @@ Content-Type: application/json
 }
 
 ### Student Login
-POST http://localhost:5001/apis/students/login
+POST http://localhost:5001/apis/student/login
 Content-Type: application/json
 
 {
@@ -22,7 +22,7 @@ Content-Type: application/json
 }
 
 ### Company Registration
-POST http://localhost:5001/apis/companies/register
+POST http://localhost:5001/apis/company/register
 Content-Type: application/json
 
 {
@@ -37,7 +37,7 @@ Content-Type: application/json
 
 
 ### Company Login
-POST http://localhost:5001/apis/companies/login
+POST http://localhost:5001/apis/company/login
 Content-Type: application/json
 
 {
@@ -65,7 +65,7 @@ Content-Type: application/json
 }
 
 ### craete the job for students by the company
-post http://localhost:5001/apis/jobs/create
+post http://localhost:5001/apis/job/create
 Content-Type: application/json
 
  {
@@ -84,7 +84,7 @@ Content-Type: application/json
 
 }
 ####applying for the job
-POST http://localhost:5001/apis/jobs/apply
+POST http://localhost:5001/apis/job/apply
 Content-Type: application/json
 
 {
@@ -99,7 +99,7 @@ Content-Type: application/json
 
 
 ### Create a Hackathon
-POST http://localhost:5001/apis/hackathons/create
+POST http://localhost:5001/apis/hackathon/create
 Content-Type: application/json
 
 {
@@ -111,7 +111,7 @@ Content-Type: application/json
     "hackathonId": "60d21b4667d0d8992e620c85"
 }
 ### Participate in a Hackathon
-PUT  http://localhost:5001/apis/hackathons/participate
+PUT  http://localhost:5001/apis/hackathon/participate
 Content-Type: application/json
 
 {
@@ -122,17 +122,17 @@ Content-Type: application/json
 
 
 ### Get All Hackathons
-GET http://localhost:5001/apis/hackathons/all
+GET http://localhost:5001/apis/hackathon/all
 
 ### Get a Single Hackathon by ID
-GET http://localhost:5001/apis/hackathons/60d21b4667d0d8992e610c85
+GET http://localhost:5001/apis/hackathon/60d21b4667d0d8992e610c85
 
 
 
 
 
 ### Submit Hackathon Solution
-PUT  http://localhost:5001/apis/hackathons/submit
+PUT  http://localhost:5001/apis/hackathon/submit
 Content-Type: application/json
 
 {
