@@ -23,12 +23,14 @@ const studentApp = require('./apis/student');
 const companyApp = require('./apis/company');
 const adminApp = require('./apis/admin'); 
 const jobAppRouter = require('./apis/job');
+const hackthonapp=require('./apis/hackthon');
 
 // Use Routes
 app.use('/apis/students', studentApp);
 app.use('/apis/companies', companyApp);
 app.use('/apis/admin', adminApp); 
 app.use('/apis/jobs', jobAppRouter);
+app.use('/apis/hackathons',hackthonapp);
 
 // Global error handler
 app.use((err, req, res, next) => {

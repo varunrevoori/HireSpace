@@ -64,44 +64,6 @@ Content-Type: application/json
     "password": "adminPass123"
 }
 
-### Create a Hackathon
-POST http://localhost:5001/apis/hackathons/create
-Content-Type: application/json
-
-{
-    "title": "AI Challenge",
-    "problemStatement": "Build an AI model for image recognition.",
-    "domain": "AI",
-    "companyId": "60d21b4667d0d8992e610c85",
-    "deadline": "2025-04-30"
-}
-
-### Get All Hackathons
-GET http://localhost:5001/apis/hackathons
-
-### Get a Single Hackathon by ID
-GET http://localhost:5001/apis/hackathons/60d21b4667d0d8992e610c85
-
-### Participate in a Hackathon
-POST http://localhost:5001/apis/hackathons/participate
-Content-Type: application/json
-
-{
-    "studentId": "60d21b4967d0d8992e610c86",
-    "hackathonId": "60d21b4667d0d8992e610c85",
-    "gitRepository": "https://github.com/student/hackathon-project"
-}
-
-### Submit Hackathon Solution
-POST http://localhost:5001/apis/hackathons/submit
-Content-Type: application/json
-
-{
-    "studentId": "60d21b4967d0d8992e610c86",
-    "hackathonId": "60d21b4667d0d8992e610c85",
-    "gitRepository": "https://github.com/student/hackathon-project"
-}
-
 ### craete the job for students by the company
 post http://localhost:5001/apis/jobs/create
 Content-Type: application/json
@@ -132,5 +94,54 @@ Content-Type: application/json
 }
 
 
-### Get All Job Applications for a Company
-GET http://localhost:5001/apis/jobs/applications/60d21b4667d0d8992e610c85
+
+
+
+
+### Create a Hackathon
+POST http://localhost:5001/apis/hackathons/create
+Content-Type: application/json
+
+{
+    "title": "AI Challenge",
+    "problemStatement": "Build an AI model for image recognition.",
+    "domain": "AI",
+    "companyId": "60d21b4667d0d8992e610c85",
+    "deadline": "2025-04-30",
+    "hackathonId": "60d21b4667d0d8992e620c85"
+}
+### Participate in a Hackathon
+PUT  http://localhost:5001/apis/hackathons/participate
+Content-Type: application/json
+
+{
+    "username": "student12",
+    "hackathonId": "60d21b4667d0d8992e610c85",
+    "gitRepository": "https://github.com/student12/hackathon-project"
+}
+
+
+### Get All Hackathons
+GET http://localhost:5001/apis/hackathons/all
+
+### Get a Single Hackathon by ID
+GET http://localhost:5001/apis/hackathons/60d21b4667d0d8992e610c85
+
+
+
+
+
+### Submit Hackathon Solution
+PUT  http://localhost:5001/apis/hackathons/submit
+Content-Type: application/json
+
+{
+    "hackathonId": "60d21b4667d0d8992e610c85",
+    "username": "student12"
+    
+}
+
+
+
+
+
