@@ -36,21 +36,6 @@ function LoginPopup({ setShowLogin }) {
     // Ensure required fields are present
     const requestData = { ...data, userType };
 
-    if (currState === "register") {
-        if (userType === "student" && (!data.username || !data.email || !data.password)) {
-            alert("Please fill in all required fields for registration.");
-            return;
-        }
-        if (userType === "company" && (!data.companyName || !data.email || !data.password)) {
-            alert("Please fill in all required fields for company registration.");
-            return;
-        }
-        if (userType === "admin" && (!data.email || !data.password)) {
-          alert("Please fill in all required fields for admin registration.");
-          return;
-      }
-    }
-
     try {
         const response = await axios.post(newUrl, requestData);
 
@@ -62,7 +47,6 @@ function LoginPopup({ setShowLogin }) {
             alert(response.data.message);
         }
     } catch (error) {
-        console.error("Registration error:", error);
         alert(error.response?.data?.message || "Something went wrong. Please try again.");
     }
 };
