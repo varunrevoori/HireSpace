@@ -6,8 +6,8 @@ import Cross from "../../Assets/cross_icon.png"
 import { useEffect } from "react";
 
 function LoginPopup({ setShowLogin }) {
-  const [currState, setCurrState] = useState("Login");
-  const [userType, setUserType] = useState("Student"); // Default userType
+  const [currState, setCurrState] = useState("login");
+  const [userType, setUserType] = useState("student"); // Default userType
   const { url, setToken } = useContext(storeContext);
 
   // Initial data structure
@@ -31,23 +31,43 @@ function LoginPopup({ setShowLogin }) {
 
   const onLogin = async (event) => {
     event.preventDefault();
-    let newUrl = url + `/apis/${userType.toLowerCase()}/${currState === "Login" ? "login" : "register"}`;
-    
-    const response = await axios.post(newUrl, data);
-    
-    if (response.data.success) {
-      setToken(response.data.token);
-      localStorage.setItem("token", response.data.token);
-      setShowLogin(false);
-    } else {
-      alert(response.data.message);
+    let newUrl = `${url}/apis/${userType.toLowerCase()}/${currState}`;
+
+    // Ensure required fields are present
+    const requestData = { ...data, userType };
+
+    if (currState === "register") {
+        if (userType === "student" && (!data.username || !data.email || !data.password)) {
+            alert("Please fill in all required fields for registration.");
+            return;
+        }
+        if (userType === "company" && (!data.companyName || !data.email || !data.password)) {
+            alert("Please fill in all required fields for company registration.");
+            return;
+        }
+        if (userType === "admin" && (!data.email || !data.password)) {
+          alert("Please fill in all required fields for admin registration.");
+          return;
+      }
     }
-  };
-  // Function to close the popup and restore scrolling
-  const closePopup = () => {
-    setShowLogin(false);
-    document.body.style.overflow = "auto"; // Allow scrolling again
-  };
+
+    try {
+        const response = await axios.post(newUrl, requestData);
+
+        if (response.status === 200 || response.status === 201) {
+            setToken(response.data.token);
+            localStorage.setItem("token", response.data.token);
+            setShowLogin(false);
+        } else {
+            alert(response.data.message);
+        }
+    } catch (error) {
+        console.error("Registration error:", error);
+        alert(error.response?.data?.message || "Something went wrong. Please try again.");
+    }
+};
+
+
 
   // Prevent background scrolling when popup is open
   useEffect(() => {
@@ -69,39 +89,39 @@ function LoginPopup({ setShowLogin }) {
         {/* User Type Selection */}
         <div className="user-type-selection">
           <label>
-            <input type="radio" name="userType" value="Student" checked={userType === "Student"} onChange={() => setUserType("Student")} />
+            <input type="radio" name="userType" value="student" checked={userType === "student"} onChange={() => setUserType("student")} />
             Student
           </label>
           <label>
-            <input type="radio" name="userType" value="Company" checked={userType === "Company"} onChange={() => setUserType("Company")} />
+            <input type="radio" name="userType" value="company" checked={userType === "company"} onChange={() => setUserType("company")} />
             Company
           </label>
           <label>
-            <input type="radio" name="userType" value="Admin" checked={userType === "Admin"} onChange={() => setUserType("Admin")} />
+            <input type="radio" name="userType" value="admin" checked={userType === "admin"} onChange={() => setUserType("admin")} />
             Admin
           </label>
         </div>
 
         {/* Common Fields */}
         <div className="login-popup-inputs">
-          {currState === "Sign Up" && userType === "Student" && (
+          {currState === "register" && userType === "student" && (
             <input type="text" name="username" placeholder="Username" value={data.username} onChange={onChangeHandler} required />
           )}
-          {currState === "Sign Up" && userType === "Company" && (
+          {currState === "register" && userType === "company" && (
             <input type="text" name="companyName" placeholder="Company Name" value={data.companyName} onChange={onChangeHandler} required />
           )}
           <input type="email" name="email" placeholder="Email" value={data.email} onChange={onChangeHandler} required />
           <input type="password" name="password" placeholder="Password" value={data.password} onChange={onChangeHandler} required />
 
           {/* Additional Fields for Sign Up */}
-          {currState === "Sign Up" && userType === "Student" && (
+          {currState === "register" && userType === "student" && (
             <>
               <input type="text" name="skills" placeholder="Skills (comma-separated)" onChange={(e) => setData({ ...data, skills: e.target.value.split(",") })} />
               <input type="text" name="education" placeholder="Education (comma-separated)" onChange={(e) => setData({ ...data, education: e.target.value.split(",") })} />
               <input type="text" name="projects" placeholder="Projects (comma-separated)" onChange={(e) => setData({ ...data, projects: e.target.value.split(",") })} />
             </>
           )}
-          {currState === "Sign Up" && userType === "Company" && (
+          {currState === "register" && userType === "company" && (
             <>
               <input type="text" name="location" placeholder="Company Location" value={data.location} onChange={onChangeHandler} required />
               <input type="text" name="description" placeholder="Company Description" value={data.description} onChange={onChangeHandler} required />
@@ -111,7 +131,7 @@ function LoginPopup({ setShowLogin }) {
         </div>
 
         {/* Submit Button */}
-        <button type="submit">{currState === "Sign Up" ? "Create Account" : "Login"}</button>
+        <button type="submit">{currState === "register" ? "Create Account" : "login"}</button>
 
         {/* Terms and Conditions */}
         <div className="login-popup-condition">
@@ -120,13 +140,13 @@ function LoginPopup({ setShowLogin }) {
         </div>
 
         {/* Toggle between Login & Sign Up */}
-        {currState === "Login" ? (
+        {currState === "login" ? (
           <p className="last">
-            Create a new account? <span onClick={() => setCurrState("Sign Up")}>Click here</span>
+            Create a new account? <span onClick={() => setCurrState("register")}>Click here</span>
           </p>
         ) : (
           <p className="last">
-            Already have an account? <span onClick={() => setCurrState("Login")}>Login here</span>
+            Already have an account? <span onClick={() => setCurrState("login")}>Login here</span>
           </p>
         )}
       </form>

@@ -8,23 +8,16 @@ const JobApplication = require('../models/jobstatusmodel');
 
 const studentApp = express.Router();
 
-// Student Registration
 studentApp.post('/register', expressAsyncHandler(async (req, res) => {
-    const { userType, username, email, password, skills, education, projects } = req.body;
+    const { userType, username, email, password, skills = [], education = [], projects = [] } = req.body;
 
-    if (!userType || !username || !email || !password) {
+    if (!userType || !email || !password || (userType === "Student" && !username)) {
         return res.status(400).json({ message: 'All required fields must be filled' });
     }
 
-    // Check if username or email already exists
     const existingUser = await Student.findOne({ $or: [{ email }, { username }] });
     if (existingUser) {
-        if (existingUser.email === email) {
-            return res.status(400).json({ message: 'Email is already taken' });
-        }
-        if (existingUser.username === username) {
-            return res.status(400).json({ message: 'Username is already taken' });
-        }
+        return res.status(400).json({ message: existingUser.email === email ? 'Email is already taken' : 'Username is already taken' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
