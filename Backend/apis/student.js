@@ -11,7 +11,7 @@ const studentApp = express.Router();
 studentApp.post('/register', expressAsyncHandler(async (req, res) => {
     const { userType, username, email, password, skills = [], education = [], projects = [] } = req.body;
 
-    if (!userType || !email || !password || (userType === "Student" && !username)) {
+    if (!userType || !email || !password || (userType === "student" && !username)) {
         return res.status(400).json({ message: 'All required fields must be filled' });
     }
 
