@@ -25,6 +25,8 @@ const companyApp = require('./apis/company');
 const adminApp = require('./apis/admin'); 
 const jobAppRouter = require('./apis/job');
 const hackthonapp=require('./apis/hackthon');
+const router = require('./apis/githubAuth');
+
 
 // Use Routes
 app.use('/apis/student', studentApp);
@@ -32,6 +34,8 @@ app.use('/apis/company', companyApp);
 app.use('/apis/admin', adminApp); 
 app.use('/apis/job', jobAppRouter);
 app.use('/apis/hackathon',hackthonapp);
+
+app.use('/apis/auth',router);
 
 // Global error handler
 app.use((err, req, res, next) => {
