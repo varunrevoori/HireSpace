@@ -1,6 +1,9 @@
 import "./Navbar.css";
 import logo from "../../Assets/logo.png";
 import profileIcon from "../../Assets/user.png";
+import logoutIcon from "../../Assets/exit.png"
+import profile from "../../Assets/profile.png";
+import dashboard from "../../Assets/buisiness.png"
 import { useNavigate } from "react-router-dom";
 import { storeContext } from "../../Contexts/StoreContext";
 import React, { useState, useEffect, useContext, useRef } from "react";
@@ -63,8 +66,14 @@ function Navbar({ setShowLogin }) {
           {showDropdown && (
             <div className="dropdown-menu">
               <ul>
-                <li onClick={() => navigate("/dashboard")}>View Dashboard</li>
-                <li onClick={handleLogout}>Logout</li>
+                <li onClick={() => navigate("/dashboard")}>
+                <img className="user-icon" src={dashboard}/>Dashboard</li>
+                <li>
+                <img className="user-icon" src={profile}/>
+                Profile</li>
+                <li onClick={handleLogout}>
+                  <img className="logout-icon" src={logoutIcon}/>
+                  Logout</li>  
               </ul>
             </div>
           )}

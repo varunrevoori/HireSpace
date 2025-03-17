@@ -125,7 +125,7 @@ body {
     border-radius: 5px;
     z-index: 1000;
     min-width: 150px;
-    display: none;  /* ❌ Remove always showing */
+    display: none; 
 }
   
 .dropdown-menu ul {
@@ -138,6 +138,17 @@ body {
     padding: 10px;
     cursor: pointer;
     transition: background 0.3s ease;
+}
+.dropdown-menu .logout-icon{
+    width:20px;
+    height:20px;
+    margin-right:10px;  
+}
+.dropdown-menu .user-icon{
+    width:24px;
+    height:24px;
+    margin-right:10px; 
+    margin-left:-3px; 
 }
   
 .dropdown-menu li:hover {
