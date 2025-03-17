@@ -2,12 +2,14 @@ const express = require('express');
 const axios = require('axios');
 const mongoose = require('mongoose');
 const Hackathon = require('../models/hackthonmodel');
-const { authenticateGithub } = require('./githubAuth');
+const { router } = require('./githubAuth');
+const verifytoken = require('../middlewares/verifytoken');
+const { verify } = require('jsonwebtoken');
 
 const hackathonapp = express.Router();
 
 // ✅ Create Hackathon (Admin or Company)
-hackathonapp.post('/create', async (req, res) => {
+hackathonapp.post('/create',verifytoken, async (req, res) => {
     try {
         const { title, problemStatement, domain, companyId, deadline } = req.body;
         const hackathonId = new mongoose.Types.ObjectId();
@@ -25,7 +27,7 @@ hackathonapp.post('/create', async (req, res) => {
 });
 
 // ✅ Participate in Hackathon
-hackathonapp.put('/participate', async (req, res) => {
+hackathonapp.put('/participate', verifytoken,async (req, res) => {
     try {
         const { username, hackathonId, gitRepository } = req.body;
         
@@ -43,7 +45,7 @@ hackathonapp.put('/participate', async (req, res) => {
 });
 
 // ✅ Submit Hackathon Solution
-hackathonapp.put('/submit', authenticateGithub, async (req, res) => {
+hackathonapp.put('/submit',verifytoken, async (req, res) => {
     try {
         const { hackathonId, username } = req.body;
         const hackathon = await Hackathon.findOne({ hackathonId });

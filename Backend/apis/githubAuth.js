@@ -1,21 +1,24 @@
-const axios = require('axios');
+require('dotenv').config();
 const express = require('express');
+const axios = require('axios');
 const router = express.Router();
 
-// Ensure required environment variables are set
-const { GITHUB_CLIENT_ID, GITHUB_CLIENT_SECRET } = process.env;
+const GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
+const GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
 if (!GITHUB_CLIENT_ID || !GITHUB_CLIENT_SECRET) {
-  console.error("❌ Missing GitHub OAuth environment variables");
+  console.error("❌ Missing GitHub OAuth environment variables. Please set them in .env");
 }
 
-// Redirect to GitHub OAuth login
+// GitHub OAuth Login Route
 router.get('/github', (req, res) => {
   if (!GITHUB_CLIENT_ID) {
     return res.status(500).json({ success: false, message: "GitHub Client ID is missing" });
   }
 
-  const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&scope=repo,user`;
+  const redirectUri = encodeURIComponent(`${process.env.BASE_URL}/auth/github/callback`);
+  const githubAuthUrl = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&redirect_uri=${redirectUri}&scope=user,repo`;
+  
   res.redirect(githubAuthUrl);
 });
 
@@ -28,8 +31,8 @@ router.get('/github/callback', async (req, res) => {
   }
 
   try {
-    // Exchange code for GitHub Access Token
-    const response = await axios.post(
+    // Exchange authorization code for access token
+    const tokenResponse = await axios.post(
       'https://github.com/login/oauth/access_token',
       {
         client_id: GITHUB_CLIENT_ID,
@@ -39,12 +42,32 @@ router.get('/github/callback', async (req, res) => {
       { headers: { Accept: 'application/json' } }
     );
 
-    if (!response.data.access_token) {
+    const accessToken = tokenResponse.data.access_token;
+    if (!accessToken) {
       return res.status(500).json({ success: false, message: "Failed to retrieve access token" });
     }
 
-    const accessToken = response.data.access_token;
-    return res.json({ success: true, accessToken });
+    // Fetch user details using the access token
+    const userResponse = await axios.get('https://api.github.com/user', {
+      headers: { Authorization: `Bearer ${accessToken}` },
+    });
+
+    const userData = userResponse.data;
+
+    // You can store accessToken in DB or session storage
+    return res.json({
+      success: true,
+      accessToken,
+      user: {
+        id: userData.id,
+        login: userData.login,
+        name: userData.name,
+        avatar_url: userData.avatar_url,
+        bio: userData.bio,
+        public_repos: userData.public_repos,
+      },
+    });
+
   } catch (error) {
     console.error("GitHub OAuth Error:", error.response?.data || error.message);
     return res.status(500).json({ success: false, message: "GitHub authentication failed", error: error.message });
