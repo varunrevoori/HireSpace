@@ -1,40 +1,37 @@
-
 "use client"
 
-import React from 'react'
-import JobCategories from '../JobCategory/JobCategory'
-import TopCompanies from '../JobCompanies/JobCompanies'
-import JobCard from '../JobListing/JobListing'
 import { useState, useEffect } from "react"
-import "bootstrap/dist/css/bootstrap.min.css"
+import { useNavigate } from "react-router-dom"
+import JobCategories from "../JobCategory/JobCategory"
+import TopCompanies from "../JobCompanies/JobCompanies"
 import "./Layout.css"
-export default function Layout() {
-  const [jobs, setJobs] = useState([])
-  const [filteredJobs, setFilteredJobs] = useState([])
-  const [categories, setCategories] = useState([])
-  const [companies, setCompanies] = useState([])
+
+function Layout() {
   const [searchTerm, setSearchTerm] = useState("")
   const [locationFilter, setLocationFilter] = useState("")
   const [categoryFilter, setCategoryFilter] = useState("")
+  const [companyFilter, setCompanyFilter] = useState("") // New company filter state
   const [salaryRange, setSalaryRange] = useState([0, 10000000])
   const [locations, setLocations] = useState([])
+  const [categories, setCategories] = useState([])
+  const [companies, setCompanies] = useState([])
+  const [allCompanies, setAllCompanies] = useState([]) // Store all companies for filter dropdown
   const [loading, setLoading] = useState(true)
 
+  const navigate = useNavigate()
+
   useEffect(() => {
-    // Fetch jobs from API
-    const fetchJobs = async () => {
+    // Fetch jobs data to extract locations, categories, and companies
+    const fetchData = async () => {
       try {
-        // Your actual API endpoint
         const response = await fetch("http://localhost:5001/apis/job/joblisting")
         const data = await response.json()
-        setJobs(data)
-        setFilteredJobs(data)
 
-        // Extract unique locations from the data
+        // Extract unique locations
         const uniqueLocations = [...new Set(data.map((job) => job.location))]
         setLocations(uniqueLocations)
 
-        // Extract unique categories from the data
+        // Extract unique categories with count
         const uniqueCategories = [...new Set(data.map((job) => job.category))]
         const categoriesWithCount = uniqueCategories.map((category) => {
           const count = data.filter((job) => job.category === category).length
@@ -42,14 +39,18 @@ export default function Layout() {
         })
         setCategories(categoriesWithCount)
 
-        // Extract unique companies from the data
+        // Extract all unique companies for the company filter
         const uniqueCompanies = [...new Set(data.map((job) => job.company))]
+        setAllCompanies(uniqueCompanies)
+
+        // Extract companies grouped by industry (category)
         const companiesData = uniqueCompanies.map((company) => {
           const companyJobs = data.filter((job) => job.company === company)
           const logo = companyJobs[0]?.companyLogo || "/placeholder.svg"
           return { name: company, logo }
         })
-        // Group companies by industry (using category as a proxy for industry)
+
+        // Group companies by industry (using category as proxy)
         const industries = [...new Set(data.map((job) => job.category))]
         const industriesWithCompanies = industries.map((industry) => {
           const industryJobs = data.filter((job) => job.category === industry)
@@ -59,43 +60,20 @@ export default function Layout() {
           })
           return {
             name: industry,
-            companies: industryCompanies.slice(0, 3), // Limit to 3 companies per industry
+            companies: industryCompanies.slice(0, 4), // Limit to 4 companies per industry
           }
         })
-      console.log("industries",industries)
 
         setCompanies(industriesWithCompanies)
         setLoading(false)
       } catch (error) {
-        console.error("Error fetching jobs:", error)
+        console.error("Error fetching data:", error)
         setLoading(false)
       }
     }
 
-    fetchJobs()
+    fetchData()
   }, [])
-
-  useEffect(() => {
-    // Filter jobs based on search term and filters
-    const filtered = jobs.filter((job) => {
-      const matchesSearch =
-        job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        job.description.toLowerCase().includes(searchTerm.toLowerCase())
-
-      const matchesLocation = locationFilter ? job.location === locationFilter : true
-
-      const matchesCategory = categoryFilter ? job.category === categoryFilter : true
-
-      // Check if job salary range overlaps with filter range
-      const jobMinSalary = job.salaryRange[0]
-      const jobMaxSalary = job.salaryRange[1]
-      const matchesSalary = jobMinSalary <= salaryRange[1] && jobMaxSalary >= salaryRange[0]
-
-      return matchesSearch && matchesLocation && matchesCategory && matchesSalary
-    })
-
-    setFilteredJobs(filtered)
-  }, [searchTerm, locationFilter, categoryFilter, salaryRange, jobs])
 
   const handleSalaryRangeChange = (event) => {
     const { name, value } = event.target
@@ -106,11 +84,20 @@ export default function Layout() {
     }
   }
 
-  const handleResetFilters = () => {
-    setSearchTerm("")
-    setLocationFilter("")
-    setCategoryFilter("")
-    setSalaryRange([0, 10000000])
+  const handleSearch = (e) => {
+    e.preventDefault()
+
+    // Create query parameters for filtering
+    const params = new URLSearchParams()
+    if (searchTerm) params.append("search", searchTerm)
+    if (locationFilter) params.append("location", locationFilter)
+    if (categoryFilter) params.append("category", categoryFilter)
+    if (companyFilter) params.append("company", companyFilter) // Add company filter to params
+    params.append("minSalary", salaryRange[0])
+    params.append("maxSalary", salaryRange[1])
+
+    // Navigate to results page with filters
+    navigate(`/jobs?${params.toString()}`)
   }
 
   const formatSalary = (salary) => {
@@ -129,103 +116,123 @@ export default function Layout() {
       {/* Search and Filters */}
       <div className="card mb-5 search-card">
         <div className="card-body p-4">
-          <div className="row mb-4">
-            <div className="col-md-6 mb-3 mb-md-0">
-              <div className="input-group search-input">
-                <span className="input-group-text">
-                  <i className="bi bi-search"></i>
-                </span>
-                <input
-                  type="text"
-                  className="form-control form-control-lg"
-                  placeholder="Search jobs, skills, companies..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
+          <form onSubmit={handleSearch}>
+            <div className="row mb-4">
+              <div className="col-md-6 mb-3 mb-md-0">
+                <div className="input-group search-input">
+                  <span className="input-group-text">
+                    <i className="bi bi-search"></i>
+                  </span>
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    placeholder="Search jobs, skills, companies..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </div>
+              </div>
+              <div className="col-md-3 mb-3 mb-md-0">
+                <select
+                  className="form-select form-select-lg"
+                  value={locationFilter}
+                  onChange={(e) => setLocationFilter(e.target.value)}
+                >
+                  <option value="">All Locations</option>
+                  {locations.map((location) => (
+                    <option key={location} value={location}>
+                      {location}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="col-md-3">
+                <select
+                  className="form-select form-select-lg"
+                  value={categoryFilter}
+                  onChange={(e) => setCategoryFilter(e.target.value)}
+                >
+                  <option value="">All Categories</option>
+                  {categories.map((category) => (
+                    <option key={category.name} value={category.name}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
-            <div className="col-md-3 mb-3 mb-md-0">
-              <select
-                className="form-select form-select-lg"
-                value={locationFilter}
-                onChange={(e) => setLocationFilter(e.target.value)}
-              >
-                <option value="">All Locations</option>
-                {locations.map((location) => (
-                  <option key={location} value={location}>
-                    {location}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="col-md-3">
-              <select
-                className="form-select form-select-lg"
-                value={categoryFilter}
-                onChange={(e) => setCategoryFilter(e.target.value)}
-              >
-                <option value="">All Categories</option>
-                {categories.map((category) => (
-                  <option key={category.name} value={category.name}>
-                    {category.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
 
-          <div className="row align-items-center">
-            <div className="col-md-3 mb-3 mb-md-0">
-              <label className="form-label fw-bold">Salary Range</label>
-              <div className="d-flex justify-content-between">
-                <span className="salary-display">{formatSalary(salaryRange[0])}</span>
-                <span className="salary-display">to</span>
-                <span className="salary-display">{formatSalary(salaryRange[1])}</span>
+            {/* Add company filter row */}
+            <div className="row mb-4">
+              <div className="col-md-6">
+                <select
+                  className="form-select form-select-lg"
+                  value={companyFilter}
+                  onChange={(e) => setCompanyFilter(e.target.value)}
+                >
+                  <option value="">All Companies</option>
+                  {allCompanies.map((company) => (
+                    <option key={company} value={company}>
+                      {company}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
-            <div className="col-md-6 mb-3 mb-md-0">
-              <div className="row">
-                <div className="col-6">
-                  <label htmlFor="minSalary" className="form-label small">
-                    Min Salary
-                  </label>
-                  <input
-                    type="range"
-                    className="form-range"
-                    id="minSalary"
-                    name="minSalary"
-                    min="0"
-                    max="10000000"
-                    step="100000"
-                    value={salaryRange[0]}
-                    onChange={handleSalaryRangeChange}
-                  />
-                </div>
-                <div className="col-6">
-                  <label htmlFor="maxSalary" className="form-label small">
-                    Max Salary
-                  </label>
-                  <input
-                    type="range"
-                    className="form-range"
-                    id="maxSalary"
-                    name="maxSalary"
-                    min="0"
-                    max="10000000"
-                    step="100000"
-                    value={salaryRange[1]}
-                    onChange={handleSalaryRangeChange}
-                  />
+
+            <div className="row align-items-center">
+              <div className="col-md-3 mb-3 mb-md-0">
+                <label className="form-label fw-bold">Salary Range</label>
+                <div className="d-flex justify-content-between">
+                  <span className="salary-display">{formatSalary(salaryRange[0])}</span>
+                  <span className="salary-display">to</span>
+                  <span className="salary-display">{formatSalary(salaryRange[1])}</span>
                 </div>
               </div>
+              <div className="col-md-6 mb-3 mb-md-0">
+                <div className="row">
+                  <div className="col-6">
+                    <label htmlFor="minSalary" className="form-label small">
+                      Min Salary
+                    </label>
+                    <input
+                      type="range"
+                      className="form-range"
+                      id="minSalary"
+                      name="minSalary"
+                      min="0"
+                      max="10000000"
+                      step="100000"
+                      value={salaryRange[0]}
+                      onChange={handleSalaryRangeChange}
+                    />
+                  </div>
+                  <div className="col-6">
+                    <label htmlFor="maxSalary" className="form-label small">
+                      Max Salary
+                    </label>
+                    <input
+                      type="range"
+                      className="form-range"
+                      id="maxSalary"
+                      name="maxSalary"
+                      min="0"
+                      max="10000000"
+                      step="100000"
+                      value={salaryRange[1]}
+                      onChange={handleSalaryRangeChange}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-3 text-md-end">
+                <button type="submit" className="btn btn-primary btn-lg w-100">
+                  <i className="bi bi-search me-2"></i>
+                  Search Jobs
+                </button>
+              </div>
             </div>
-            <div className="col-md-3 text-md-end">
-              <button className="btn btn-outline-primary btn-lg w-100" onClick={handleResetFilters}>
-                <i className="bi bi-arrow-counterclockwise me-2"></i>
-                Reset Filters
-              </button>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
 
@@ -234,70 +241,8 @@ export default function Layout() {
 
       {/* Top Companies */}
       <TopCompanies industries={companies} loading={loading} />
-
-      {/* Job Listings */}
-      <section className="mt-5">
-        <div className="d-flex justify-content-between align-items-center mb-4">
-          <h2 className="section-title">
-            Available Positions <span className="badge bg-primary ms-2">{filteredJobs.length}</span>
-          </h2>
-          <div className="dropdown">
-            <button
-              className="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              id="sortDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Sort by
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="sortDropdown">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Newest
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Salary: High to Low
-                </a>
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Salary: Low to High
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {loading ? (
-          <div className="text-center py-5">
-            <div className="spinner-border text-primary" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-            <p className="mt-3 text-muted">Fetching job opportunities...</p>
-          </div>
-        ) : filteredJobs.length > 0 ? (
-          <div className="row">
-            {filteredJobs.map((job) => (
-              <div key={job.jobId} className="col-md-6 col-lg-4 mb-4">
-                <JobCard job={job} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-5 bg-light rounded">
-            <i className="bi bi-search display-1 text-muted"></i>
-            <h3 className="mt-3">No jobs found</h3>
-            <p className="text-muted">Try adjusting your search filters</p>
-            <button className="btn btn-primary mt-3" onClick={handleResetFilters}>
-              Clear Filters
-            </button>
-          </div>
-        )}
-      </section>
     </main>
   )
 }
 
+export default Layout

@@ -1,6 +1,10 @@
-import "./JobCompanies.css";
+"use client"
+import { useNavigate } from "react-router-dom"
+import "./JobCompanies.css"
 
-export default function JobCompanies({ industries, loading }) {
+function JobCompanies({ industries, loading }) {
+  const navigate = useNavigate()
+
   if (loading) {
     return (
       <section className="mt-5">
@@ -11,7 +15,20 @@ export default function JobCompanies({ industries, loading }) {
           </div>
         </div>
       </section>
-    );
+    )
+  }
+ 
+  const handleCompanyClick = (companyName, category) => {
+    const params = new URLSearchParams();
+    params.append("category", category);
+    params.append("company", companyName); // Add company parameter
+    navigate(`/jobs?${params.toString()}`);
+  }
+
+  const handleViewAll = (industry) => {
+    const params = new URLSearchParams()
+    params.append("category", industry)
+    navigate(`/jobs?${params.toString()}`)
   }
 
   return (
@@ -23,21 +40,28 @@ export default function JobCompanies({ industries, loading }) {
           <div className="d-flex align-items-center mb-3">
             <h3 className="h5 mb-0">{industry.name}</h3>
             <div className="industry-line flex-grow-1 mx-3"></div>
-            <a href="#" className="view-all">
+            <a
+              href="#"
+              className="view-all"
+              onClick={(e) => {
+                e.preventDefault()
+                handleViewAll(industry.name)
+              }}
+            >
               View All
             </a>
           </div>
           <div className="row">
             {industry.companies.map((company) => (
-              <div key={company.name} className="col-md-4 mb-4">
-                <div className="card company-card h-100">
+              <div key={company.name} className="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div className="card company-card h-100" onClick={() => handleCompanyClick(company.name, industry.name)}>
                   <div className="card-body d-flex align-items-center">
                     <div className="company-logo me-3">
                       <img
                         src={company.logo || "/placeholder.svg"}
                         alt={company.name}
-                        width="48"
-                        height="48"
+                        width={48}
+                        height={48}
                         className="img-fluid"
                       />
                     </div>
@@ -56,5 +80,7 @@ export default function JobCompanies({ industries, loading }) {
         </div>
       ))}
     </section>
-  );
+  )
 }
+
+export default JobCompanies
