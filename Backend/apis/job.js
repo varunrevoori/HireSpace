@@ -1,3 +1,4 @@
+
 const express = require("express");
 const expressAsyncHandler = require("express-async-handler");
 const JobApplication = require("../models/jobstatusmodel");
@@ -22,9 +23,8 @@ jobAppRouter.get(
 );
 
 // Create a new job
-jobAppRouter.post(
-  "/create",
-  expressAsyncHandler(async (req, res) => {
+jobAppRouter.post('/create', verifyToken, expressAsyncHandler(async (req, res) => {
+
     console.log("📩 Job creation request received:", req.body);
 
     const {
@@ -41,27 +41,36 @@ jobAppRouter.post(
       salaryRange,
     } = req.body;
 
-    // Validate required fields
-    if (
-      !jobId ||
-      !companyId ||
-      !companyName ||
-      !title ||
-      !location ||
-      !description ||
-      !skillsRequired ||
-      !jobType ||
-      !experience ||
-      !salaryRange
-    ) {
-      return res
-        .status(400)
-        .json({ message: "All required fields must be filled" });
+
+    if (!jobId || !companyId || !companyName || !title || !location || !description || !skillsRequired || !jobType || !experience || !salaryRange) {
+        return res.status(400).json({ message: 'All required fields must be filled' });
     }
 
     try {
-      // Check if a job with the same jobId already exists
-      const existingJob = await Job.findOne({ jobId });
+        const existingJob = await Job.findOne({ jobId });
+
+        if (existingJob) {
+            return res.status(400).json({ message: "❌ Job ID already exists. Please use a unique jobId." });
+        }
+
+        const newJob = new Job({
+            jobId,
+            title,
+            companyName,
+            companyId,
+            location,
+            description,
+            skillsRequired,
+            jobType,
+            experience,
+            salaryRange
+        });
+
+        await newJob.save();
+        console.log("✅ Job created successfully:", newJob);
+
+        res.status(201).json({ message: 'Job created successfully', job: newJob });
+
 
       if (existingJob) {
         return res.status(400).json({
@@ -101,14 +110,12 @@ jobAppRouter.post(
   })
 );
 
-jobAppRouter.post(
-  "/apply",
-  expressAsyncHandler(async (req, res) => {
+// ✅ Apply for a job (Protected)
+jobAppRouter.post('/apply', verifyToken, expressAsyncHandler(async (req, res) => {
     console.log("📩 Job application request received:", req.body);
 
     const { jobId, username, resumeUrl } = req.body;
 
-    // ✅ Validate input
     if (!jobId || !username || !resumeUrl) {
       return res
         .status(400)
@@ -116,51 +123,41 @@ jobAppRouter.post(
     }
 
     try {
-      // ✅ Check if job exists
-      const jobExists = await Job.findOne({ jobId });
-      if (!jobExists) {
-        return res.status(404).json({ message: "Job not found." });
-      }
 
-      // ✅ Check if user already applied
-      const existingApplication = await JobApplication.findOne({
-        jobId,
-        username,
-      });
-      if (existingApplication) {
-        return res
-          .status(400)
-          .json({ message: "You have already applied for this job." });
-      }
+        const jobExists = await Job.findOne({ jobId });
+        if (!jobExists) {
+            return res.status(404).json({ message: "Job not found." });
+        }
 
-      // ✅ Store resume URL in MongoDB
-      const newApplication = new JobApplication({
-        jobId,
-        username,
-        resumeUrl, // Store the URL
-      });
+        const existingApplication = await JobApplication.findOne({ jobId, username });
+        if (existingApplication) {
+            return res.status(400).json({ message: "You have already applied for this job." });
+        }
 
-      await newApplication.save();
+        const newApplication = new JobApplication({
+            jobId,
+            username,
+            resumeUrl
+        });
 
-      console.log("✅ Job application submitted:", newApplication);
-      res.status(201).json({
-        message: "Job application submitted successfully!",
-        newApplication,
-      });
+        await newApplication.save();
+        console.log("✅ Job application submitted:", newApplication);
+        res.status(201).json({ message: "Job application submitted successfully!", newApplication });
     } catch (error) {
       console.error("❌ Error applying for job:", error);
       res
         .status(500)
         .json({ message: "Internal Server Error", error: error.message });
     }
-  })
-);
+  
+// ✅ Get all job applications for a student (Protected)
+jobAppRouter.get('/student/:username', verifyToken, expressAsyncHandler(async (req, res) => {
 
-// Get all job applications for a student
-jobAppRouter.get(
-  "/student/:username",
-  expressAsyncHandler(async (req, res) => {
     const { username } = req.params;
+    
+    if (req.user.username !== username) {
+        return res.status(403).json({ message: "Unauthorized access to applications." });
+    }
 
     const applications = await JobApplication.find({ username }).populate(
       "job"
@@ -169,10 +166,9 @@ jobAppRouter.get(
   })
 );
 
-// Get all job applications for a specific job
-jobAppRouter.get(
-  "/job/:jobId",
-  expressAsyncHandler(async (req, res) => {
+
+// ✅ Get all job applications for a specific job (Protected)
+jobAppRouter.get('/job/:jobId', verifyToken, expressAsyncHandler(async (req, res) => {
     const { jobId } = req.params;
 
     const applications = await JobApplication.find({ job: jobId }).populate(
@@ -182,10 +178,9 @@ jobAppRouter.get(
   })
 );
 
-// Update job application status
-jobAppRouter.patch(
-  "/update-status",
-  expressAsyncHandler(async (req, res) => {
+
+// ✅ Update job application status (Protected)
+jobAppRouter.patch('/update-status', verifyToken, expressAsyncHandler(async (req, res) => {
     const { applicationId, status } = req.body;
 
     if (

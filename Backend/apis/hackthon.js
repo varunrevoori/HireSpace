@@ -2,12 +2,14 @@ const express = require('express');
 const axios = require('axios');
 const mongoose = require('mongoose');
 const Hackathon = require('../models/hackthonmodel');
-const { authenticateGithub } = require('./githubAuth');
+const { router } = require('./githubAuth');
+const verifytoken = require('../middlewares/verifytoken');
+const { verify } = require('jsonwebtoken');
 
 const hackathonapp = express.Router();
 
 // ✅ Create Hackathon (Admin or Company)
-hackathonapp.post('/create', async (req, res) => {
+hackathonapp.post('/create',verifytoken, async (req, res) => {
     try {
         const { title, problemStatement, domain, companyId, deadline } = req.body;
         const hackathonId = new mongoose.Types.ObjectId();
@@ -25,7 +27,7 @@ hackathonapp.post('/create', async (req, res) => {
 });
 
 // ✅ Participate in Hackathon
-hackathonapp.put('/participate', async (req, res) => {
+hackathonapp.put('/participate', verifytoken,async (req, res) => {
     try {
         const { username, hackathonId, gitRepository } = req.body;
         
@@ -42,26 +44,26 @@ hackathonapp.put('/participate', async (req, res) => {
     }
 });
 
-// ✅ Submit Hackathon Solution
-// hackathonapp.put('/submit', authenticateGithub, async (req, res) => {
-//     try {
-//         const { hackathonId, username } = req.body;
-//         const hackathon = await Hackathon.findOne({ hackathonId });
-//         if (!hackathon) return res.status(404).json({ message: 'Hackathon not found!' });
 
-//         const participant = hackathon.participants.find(p => p.username === username);
-//         if (!participant) return res.status(404).json({ message: 'Participant not found!' });
+hackathonapp.put('/submit',verifytoken, async (req, res) => {
+    try {
+        const { hackathonId, username } = req.body;
+        const hackathon = await Hackathon.findOne({ hackathonId });
+        if (!hackathon) return res.status(404).json({ message: 'Hackathon not found!' });
 
-//         participant.gitScore = await calculateGitScore(participant.gitRepository);
-//         participant.domainScore = calculateDomainScore(participant.gitRepository);
-//         await hackathon.save();
-//         updateTopPerformers(hackathon);
+        const participant = hackathon.participants.find(p => p.username === username);
+        if (!participant) return res.status(404).json({ message: 'Participant not found!' });
 
-//         res.status(200).json({ message: 'Hackathon submitted successfully!', participant });
-//     } catch (error) {
-//         res.status(500).json({ message: 'Error submitting hackathon', error: error.message });
-//     }
-// });
+        participant.gitScore = await calculateGitScore(participant.gitRepository);
+        participant.domainScore = calculateDomainScore(participant.gitRepository);
+        await hackathon.save();
+        updateTopPerformers(hackathon);
+
+        res.status(200).json({ message: 'Hackathon submitted successfully!', participant });
+    } catch (error) {
+        res.status(500).json({ message: 'Error submitting hackathon', error: error.message });
+    }
+});
 
 // ✅ GitHub Score Calculation
 const calculateGitScore = async (repoLink) => {
