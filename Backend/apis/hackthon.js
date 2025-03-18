@@ -44,7 +44,7 @@ hackathonapp.put('/participate', verifytoken,async (req, res) => {
     }
 });
 
-// ✅ Submit Hackathon Solution
+
 hackathonapp.put('/submit',verifytoken, async (req, res) => {
     try {
         const { hackathonId, username } = req.body;
