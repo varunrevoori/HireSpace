@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginPopup from "./Pages/LoginPopup/LoginPopup";
 import Layout from "./Pages/JobInternship/Layout/Layout"
+import JobListing from "./Pages/JobInternship/JobListing/JobListing";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/jobspage" element={<Layout/>} />
+          <Route path="/jobs" element={<JobListing/>} />
         </Routes>
       </div>
       <Footer />
