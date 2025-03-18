@@ -43,25 +43,25 @@ hackathonapp.put('/participate', async (req, res) => {
 });
 
 // ✅ Submit Hackathon Solution
-hackathonapp.put('/submit', authenticateGithub, async (req, res) => {
-    try {
-        const { hackathonId, username } = req.body;
-        const hackathon = await Hackathon.findOne({ hackathonId });
-        if (!hackathon) return res.status(404).json({ message: 'Hackathon not found!' });
+// hackathonapp.put('/submit', authenticateGithub, async (req, res) => {
+//     try {
+//         const { hackathonId, username } = req.body;
+//         const hackathon = await Hackathon.findOne({ hackathonId });
+//         if (!hackathon) return res.status(404).json({ message: 'Hackathon not found!' });
 
-        const participant = hackathon.participants.find(p => p.username === username);
-        if (!participant) return res.status(404).json({ message: 'Participant not found!' });
+//         const participant = hackathon.participants.find(p => p.username === username);
+//         if (!participant) return res.status(404).json({ message: 'Participant not found!' });
 
-        participant.gitScore = await calculateGitScore(participant.gitRepository);
-        participant.domainScore = calculateDomainScore(participant.gitRepository);
-        await hackathon.save();
-        updateTopPerformers(hackathon);
+//         participant.gitScore = await calculateGitScore(participant.gitRepository);
+//         participant.domainScore = calculateDomainScore(participant.gitRepository);
+//         await hackathon.save();
+//         updateTopPerformers(hackathon);
 
-        res.status(200).json({ message: 'Hackathon submitted successfully!', participant });
-    } catch (error) {
-        res.status(500).json({ message: 'Error submitting hackathon', error: error.message });
-    }
-});
+//         res.status(200).json({ message: 'Hackathon submitted successfully!', participant });
+//     } catch (error) {
+//         res.status(500).json({ message: 'Error submitting hackathon', error: error.message });
+//     }
+// });
 
 // ✅ GitHub Score Calculation
 const calculateGitScore = async (repoLink) => {

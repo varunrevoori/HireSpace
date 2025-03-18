@@ -33,7 +33,7 @@ app.use('/apis/student', studentApp);
 app.use('/apis/company', companyApp);
 app.use('/apis/admin', adminApp); 
 app.use('/apis/job', jobAppRouter);
-app.use('/apis/hackathon',hackthonapp);
+app.use('/apis/hackathon', hackthonapp);
 
 app.use('/apis/auth',router);
 
