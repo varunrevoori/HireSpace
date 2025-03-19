@@ -1,6 +1,11 @@
+"use client"
+
 import "./JobCard.css"
+import { useNavigate } from "react-router-dom"
 
 function JobCard({ job }) {
+  const navigate = useNavigate()
+
   // Format salary range
   const formatSalary = (salary) => {
     if (salary >= 10000000) return "1 Cr+"
@@ -10,6 +15,11 @@ function JobCard({ job }) {
 
   const minSalary = formatSalary(job.salaryRange[0])
   const maxSalary = formatSalary(job.salaryRange[1])
+
+  // Handle apply button click
+  const handleApplyClick = () => {
+    navigate(`/apply/${job.jobId}`)
+  }
 
   return (
     <div className="card job-card h-100">
@@ -65,7 +75,7 @@ function JobCard({ job }) {
         </div>
       </div>
       <div className="card-footer bg-white border-top-0 pt-0">
-        <button className="btn btn-primary w-100">
+        <button className="btn btn-primary w-100" onClick={handleApplyClick}>
           <i className="bi bi-send me-2"></i>
           Apply Now
         </button>
