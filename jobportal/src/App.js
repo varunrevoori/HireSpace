@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import LoginPopup from "./Pages/LoginPopup/LoginPopup";
 import Layout from "./Pages/JobInternship/Layout/Layout"
 import JobListing from "./Pages/JobInternship/JobListing/JobListing";
+import JobApplication from "./Pages/JobInternship/JobApplication/JobApplication";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/jobspage" element={<Layout/>} />
           <Route path="/jobs" element={<JobListing/>} />
+           <Route path="/apply/:jobId" element={<JobApplication />} />
         </Routes>
       </div>
       <Footer />

@@ -4,7 +4,6 @@ const jwt = require('jsonwebtoken');
 const expressAsyncHandler = require('express-async-handler');
 const Student = require('../models/studentmodel');
 require('dotenv').config();
-const JobApplication = require('../models/jobstatusmodel');
 
 const studentApp = express.Router();
 
