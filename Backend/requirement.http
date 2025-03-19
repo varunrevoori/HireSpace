@@ -115,9 +115,9 @@ PUT  http://localhost:5001/apis/hackathon/participate
 Content-Type: application/json
 
 {
-    "username": "student12",
-    "hackathonId": "60d21b4667d0d8992e610c85",
-    "gitRepository": "https://github.com/student12/hackathon-project"
+    "username": "student",
+    "hackathonId": "60d21b4667d0d8992e620c85",
+    "gitRepository": "https://github.com/varunrevoori/HireSpace"
 }
 
 
@@ -136,8 +136,8 @@ PUT  http://localhost:5001/apis/hackathon/submit
 Content-Type: application/json
 
 {
-    "hackathonId": "60d21b4667d0d8992e610c85",
-    "username": "student12"
+    "hackathonId": "60d21b4667d0d8992e620c85",
+    "username": "student"
     
 }
 

@@ -10,7 +10,7 @@ if (!GITHUB_CLIENT_ID || !GITHUB_CLIENT_SECRET) {
   console.error("❌ Missing GitHub OAuth environment variables. Please set them in .env");
 }
 
-// GitHub OAuth Login Route
+// ✅ GitHub OAuth Login Route
 router.get('/github', (req, res) => {
   if (!GITHUB_CLIENT_ID) {
     return res.status(500).json({ success: false, message: "GitHub Client ID is missing" });
@@ -22,7 +22,7 @@ router.get('/github', (req, res) => {
   res.redirect(githubAuthUrl);
 });
 
-// GitHub OAuth Callback
+// ✅ GitHub OAuth Callback
 router.get('/github/callback', async (req, res) => {
   const { code } = req.query;
 
