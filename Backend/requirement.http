@@ -73,6 +73,7 @@ Content-Type: application/json
 
    "jobId": "fca30b31-35a3-4ebc-819b-254adc07fc62",
     "title": "Software Engineer",
+    "category": "Software Development",
    "companyName": "Example Company",
     "companyId": "COMP-1740835542137",
     "location": "india",

@@ -5,6 +5,7 @@ import MockTest from "../../Assets/MockTest.jpg"
 import Resume from "../../Assets/Resume.jpg"
 import Interview from "../../Assets/Interview.jpg"
 import Job from "../../Assets/Job.jpg"
+import { useNavigate } from "react-router-dom"
 
 // SVG Icons as components
 const CodeIcon = () => (
@@ -64,6 +65,7 @@ const CheckCircleIcon = () => (
 
 function Features (){
   const [activeFeature, setActiveFeature] = useState(0);
+  const navigate = useNavigate()
 
   const features = [
     {
@@ -73,6 +75,7 @@ function Features (){
         "Participate in our regular hackathons to build real-world projects, collaborate with peers, and showcase your skills to potential employers.",
       image: Hackathon,
       colorClass: "violet",
+      path: "/hackathons",
       benefits: [
         "Build portfolio-worthy projects",
         "Network with industry professionals",
@@ -87,6 +90,7 @@ function Features (){
         "Practice with industry-standard assessments designed to simulate real technical interviews and coding challenges from top companies.",
       image: MockTest,
       colorClass: "blue",
+      path: "/mocktests",
       benefits: [
         "Practice with real interview questions",
         "Get detailed performance analytics",
@@ -101,6 +105,7 @@ function Features (){
         "Get comprehensive preparation for technical and behavioral interviews with personalized feedback, mock interviews, and expert tips.",
       image: Interview,
       colorClass: "emerald",
+      path: "/interviewprep",
       benefits: [
         "One-on-one mock interviews",
         "Personalized feedback from experts",
@@ -115,6 +120,7 @@ function Features (){
         "Access exclusive job and internship opportunities from our partner companies, with personalized recommendations based on your profile.",
       image: Job,
       colorClass: "amber",
+      path: "/jobspage",
       benefits: [
         "Exclusive job listings from partners",
         "Resume and portfolio reviews",
@@ -129,6 +135,7 @@ function Features (){
         "Get your resume analyzed by our AI-powered tool to receive an ATS (Applicant Tracking System) score and tailored improvement suggestions.",
       image: Resume,
       colorClass: "indigo",
+      path: "/resumeanalysis",
       benefits: [
         "ATS compatibility score",
         "Keyword optimization suggestions",
@@ -206,10 +213,13 @@ function Features (){
                 </ul>
               </div>
 
-              <button className={`explore-button ${features[activeFeature].colorClass}`}>
-                Explore {features[activeFeature].title}
-                <ArrowRightIcon className="arrow-icon pulse" />
-              </button>
+              <button
+          className={`explore-button ${features[activeFeature].colorClass}`}
+          onClick={() => navigate(features[activeFeature].path)}
+        >
+          Explore {features[activeFeature].title}
+          <ArrowRightIcon className="arrow-icon pulse" />
+        </button>
             </div>
           </div>
         </div>

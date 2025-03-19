@@ -1,0 +1,115 @@
+/* Top companies specific styles */
+.company-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+  }
+  
+  .company-card:hover {
+    border-color: #4361ee;
+    transform: translateY(-5px);
+  }
+  
+  .company-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+  }
+  
+  .company-jobs {
+    font-size: 0.85rem;
+    color: #6c757d;
+  }
+  
+  .company-card:hover .company-jobs {
+    color: #4361ee;
+  }
+  
+  .company-card:hover .bi-arrow-right {
+    transform: translateX(5px);
+    color: #4361ee;
+  }
+  
+  .bi-arrow-right {
+    transition: transform 0.3s ease;
+    font-size: 0.85rem;
+  }
+  
+  .industry-line {
+    height: 1px;
+    background-color: #e9ecef;
+  }
+  
+  .view-all {
+    font-size: 0.9rem;
+    color: #4361ee;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .view-all:hover {
+    text-decoration: underline;
+  }
+  
+  /* JobCompanies.css */
+.company-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.company-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: #dee2e6;
+}
+
+.company-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.company-jobs {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+.industry-line {
+  height: 1px;
+  background-color: #dee2e6;
+}
+.view-all {
+  font-size: 0.875rem;
+  text-decoration: none;
+  color: #0d6efd;
+  font-weight: 500;
+}
+
+.view-all:hover {
+  text-decoration: underline;
+}
+
+.section-title {
+  font-weight: 700;
+  color: #212529;
+}
+

@@ -1,0 +1,2002 @@
+[
+    {
+        "jobId": "J001",
+        "title": "Software Engineer",
+        "category": "IT",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Tokyo",
+        "description": "Exciting opportunity for a Full Stack Developer at Netflix.",
+        "skillsRequired": [
+            "AWS",
+            "Node.js",
+            "MongoDB"
+        ],
+        "jobType": "Internship",
+        "experience": "4-10 years",
+        "salaryRange": [
+            1591497,
+            7472251
+        ]
+    },
+    {
+        "jobId": "J002",
+        "title": "Cloud Engineer",
+        "category": "Artificial Intelligence",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Database Administrator at Netflix.",
+        "skillsRequired": [
+            "Python",
+            "Deep Learning",
+            "Computer Vision"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-10 years",
+        "salaryRange": [
+            110036,
+            904048
+        ]
+    },
+    {
+        "jobId": "J003",
+        "title": "Cybersecurity Engineer",
+        "category": "DevOps",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "Toronto",
+        "description": "Exciting opportunity for a DevOps Engineer at IBM.",
+        "skillsRequired": [
+            "Docker",
+            "AWS",
+            "CI/CD"
+        ],
+        "jobType": "Remote",
+        "experience": "5-6 years",
+        "salaryRange": [
+            2954548,
+            9397018
+        ]
+    },
+    {
+        "jobId": "J004",
+        "title": "ML Engineer",
+        "category": "Artificial Intelligence",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Full Stack Developer at Netflix.",
+        "skillsRequired": [
+            "Python",
+            "Computer Vision",
+            "PyTorch"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-7 years",
+        "salaryRange": [
+            3369691,
+            9041064
+        ]
+    },
+    {
+        "jobId": "J005",
+        "title": "Frontend Developer",
+        "category": "IT",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a QA Engineer at Google.",
+        "skillsRequired": [
+            "MongoDB",
+            "React",
+            "AWS"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-7 years",
+        "salaryRange": [
+            1493259,
+            5559443
+        ]
+    },
+    {
+        "jobId": "J006",
+        "title": "Product Manager",
+        "category": "FinTech",
+        "company": "Amazon",
+        "companyLogo": "https://logo.clearbit.com/amazon.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Cybersecurity Engineer at Amazon.",
+        "skillsRequired": [
+            "Solidity",
+            "Smart Contracts",
+            "Blockchain Security"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-8 years",
+        "salaryRange": [
+            2131800,
+            8538408
+        ]
+    },
+    {
+        "jobId": "J007",
+        "title": "Frontend Developer",
+        "category": "DevOps",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Los Angeles",
+        "description": "Exciting opportunity for a Software Engineer at Google.",
+        "skillsRequired": [
+            "AWS",
+            "Docker",
+            "CI/CD"
+        ],
+        "jobType": "Internship",
+        "experience": "2-7 years",
+        "salaryRange": [
+            1498054,
+            7589196
+        ]
+    },
+    {
+        "jobId": "J008",
+        "title": "Data Scientist",
+        "category": "DevOps",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Full Stack Developer at Goldman Sachs.",
+        "skillsRequired": [
+            "Kubernetes",
+            "Docker",
+            "AWS"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-10 years",
+        "salaryRange": [
+            2778301,
+            5472580
+        ]
+    },
+    {
+        "jobId": "J009",
+        "title": "Data Scientist",
+        "category": "DevOps",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Frontend Developer at IBM.",
+        "skillsRequired": [
+            "AWS",
+            "Kubernetes",
+            "Docker"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-9 years",
+        "salaryRange": [
+            1794599,
+            5972829
+        ]
+    },
+    {
+        "jobId": "J010",
+        "title": "Software Engineer",
+        "category": "IT",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Cloud Engineer at Goldman Sachs.",
+        "skillsRequired": [
+            "Node.js",
+            "MongoDB",
+            "React"
+        ],
+        "jobType": "Internship",
+        "experience": "1-10 years",
+        "salaryRange": [
+            3999887,
+            5726936
+        ]
+    },
+    {
+        "jobId": "J011",
+        "title": "Database Administrator",
+        "category": "Data Science",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a QA Engineer at IBM.",
+        "skillsRequired": [
+            "Python",
+            "NLP",
+            "Deep Learning"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-7 years",
+        "salaryRange": [
+            3648745,
+            5775828
+        ]
+    },
+    {
+        "jobId": "J012",
+        "title": "ML Engineer",
+        "category": "Finance",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Backend Developer at Coinbase.",
+        "skillsRequired": [
+            "Valuation",
+            "Excel",
+            "Risk Management"
+        ],
+        "jobType": "Remote",
+        "experience": "5-8 years",
+        "salaryRange": [
+            2398425,
+            6019310
+        ]
+    },
+    {
+        "jobId": "J013",
+        "title": "DevOps Engineer",
+        "category": "DevOps",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Los Angeles",
+        "description": "Exciting opportunity for a Investment Analyst at OpenAI.",
+        "skillsRequired": [
+            "Kubernetes",
+            "CI/CD",
+            "AWS"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-9 years",
+        "salaryRange": [
+            2978600,
+            7463734
+        ]
+    },
+    {
+        "jobId": "J014",
+        "title": "Product Manager",
+        "category": "Data Science",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a ML Engineer at Google.",
+        "skillsRequired": [
+            "SQL",
+            "NLP",
+            "TensorFlow"
+        ],
+        "jobType": "Internship",
+        "experience": "4-8 years",
+        "salaryRange": [
+            2906658,
+            9119068
+        ]
+    },
+    {
+        "jobId": "J015",
+        "title": "Software Engineer",
+        "category": "Data Science",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Investment Analyst at Goldman Sachs.",
+        "skillsRequired": [
+            "Deep Learning",
+            "NLP",
+            "SQL"
+        ],
+        "jobType": "Contract",
+        "experience": "5-9 years",
+        "salaryRange": [
+            3619178,
+            8230658
+        ]
+    },
+    {
+        "jobId": "J016",
+        "title": "Backend Developer",
+        "category": "DevOps",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "Tokyo",
+        "description": "Exciting opportunity for a Software Engineer at Microsoft.",
+        "skillsRequired": [
+            "Docker",
+            "AWS",
+            "Kubernetes"
+        ],
+        "jobType": "Internship",
+        "experience": "4-9 years",
+        "salaryRange": [
+            3318361,
+            8361330
+        ]
+    },
+    {
+        "jobId": "J017",
+        "title": "Backend Developer",
+        "category": "Finance",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "London",
+        "description": "Exciting opportunity for a AI Research Scientist at OpenAI.",
+        "skillsRequired": [
+            "Valuation",
+            "Excel",
+            "Risk Management"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-7 years",
+        "salaryRange": [
+            2107058,
+            9102572
+        ]
+    },
+    {
+        "jobId": "J018",
+        "title": "Frontend Developer",
+        "category": "Artificial Intelligence",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a DevOps Engineer at Microsoft.",
+        "skillsRequired": [
+            "Python",
+            "PyTorch",
+            "Computer Vision"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-10 years",
+        "salaryRange": [
+            3461190,
+            8033528
+        ]
+    },
+    {
+        "jobId": "J019",
+        "title": "QA Engineer",
+        "category": "FinTech",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Los Angeles",
+        "description": "Exciting opportunity for a Product Manager at Netflix.",
+        "skillsRequired": [
+            "Ethereum",
+            "Smart Contracts",
+            "Blockchain Security"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-6 years",
+        "salaryRange": [
+            2566110,
+            9964957
+        ]
+    },
+    {
+        "jobId": "J020",
+        "title": "QA Engineer",
+        "category": "IT",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Backend Developer at Coinbase.",
+        "skillsRequired": [
+            "JavaScript",
+            "Node.js",
+            "React"
+        ],
+        "jobType": "Internship",
+        "experience": "1-9 years",
+        "salaryRange": [
+            1593698,
+            7594890
+        ]
+    },
+    {
+        "jobId": "J021",
+        "title": "DevOps Engineer",
+        "category": "IT",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "Toronto",
+        "description": "Exciting opportunity for a Database Administrator at Facebook.",
+        "skillsRequired": [
+            "AWS",
+            "React",
+            "MongoDB"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-8 years",
+        "salaryRange": [
+            3041451,
+            6954160
+        ]
+    },
+    {
+        "jobId": "J022",
+        "title": "Cloud Engineer",
+        "category": "Artificial Intelligence",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Full Stack Developer at Coinbase.",
+        "skillsRequired": [
+            "Deep Learning",
+            "Computer Vision",
+            "PyTorch"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-8 years",
+        "salaryRange": [
+            3531736,
+            7507514
+        ]
+    },
+    {
+        "jobId": "J023",
+        "title": "Software Engineer",
+        "category": "Cybersecurity",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Investment Analyst at Facebook.",
+        "skillsRequired": [
+            "Network Security",
+            "Encryption",
+            "Firewalls"
+        ],
+        "jobType": "Part-time",
+        "experience": "2-12 years",
+        "salaryRange": [
+            3493715,
+            9594644
+        ]
+    },
+    {
+        "jobId": "J024",
+        "title": "ML Engineer",
+        "category": "IT",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Backend Developer at Facebook.",
+        "skillsRequired": [
+            "AWS",
+            "MongoDB",
+            "React"
+        ],
+        "jobType": "Internship",
+        "experience": "1-9 years",
+        "salaryRange": [
+            1985482,
+            5112970
+        ]
+    },
+    {
+        "jobId": "J025",
+        "title": "Full Stack Developer",
+        "category": "Cybersecurity",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a Backend Developer at Microsoft.",
+        "skillsRequired": [
+            "Firewalls",
+            "Penetration Testing",
+            "Encryption"
+        ],
+        "jobType": "Contract",
+        "experience": "5-9 years",
+        "salaryRange": [
+            3907168,
+            6082131
+        ]
+    },
+    {
+        "jobId": "J026",
+        "title": "Data Scientist",
+        "category": "IT",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Full Stack Developer at OpenAI.",
+        "skillsRequired": [
+            "React",
+            "Node.js",
+            "JavaScript"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-7 years",
+        "salaryRange": [
+            2697518,
+            7756432
+        ]
+    },
+    {
+        "jobId": "J027",
+        "title": "Investment Analyst",
+        "category": "Cybersecurity",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Data Scientist at OpenAI.",
+        "skillsRequired": [
+            "Encryption",
+            "Penetration Testing",
+            "Network Security"
+        ],
+        "jobType": "Internship",
+        "experience": "2-9 years",
+        "salaryRange": [
+            2020987,
+            7336334
+        ]
+    },
+    {
+        "jobId": "J028",
+        "title": "Database Administrator",
+        "category": "Artificial Intelligence",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Tokyo",
+        "description": "Exciting opportunity for a QA Engineer at OpenAI.",
+        "skillsRequired": [
+            "Python",
+            "Computer Vision",
+            "PyTorch"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-9 years",
+        "salaryRange": [
+            1198254,
+            5549268
+        ]
+    },
+    {
+        "jobId": "J029",
+        "title": "Cybersecurity Engineer",
+        "category": "FinTech",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "Los Angeles",
+        "description": "Exciting opportunity for a DevOps Engineer at Goldman Sachs.",
+        "skillsRequired": [
+            "Smart Contracts",
+            "Solidity",
+            "Ethereum"
+        ],
+        "jobType": "Internship",
+        "experience": "3-12 years",
+        "salaryRange": [
+            1745899,
+            8112490
+        ]
+    },
+    {
+        "jobId": "J030",
+        "title": "Database Administrator",
+        "category": "IT",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a ML Engineer at Coinbase.",
+        "skillsRequired": [
+            "React",
+            "AWS",
+            "MongoDB"
+        ],
+        "jobType": "Contract",
+        "experience": "3-6 years",
+        "salaryRange": [
+            1828383,
+            9049627
+        ]
+    },
+    {
+        "jobId": "J031",
+        "title": "AI Research Scientist",
+        "category": "Finance",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Blockchain Developer at IBM.",
+        "skillsRequired": [
+            "Financial Modeling",
+            "Risk Management",
+            "Valuation"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-10 years",
+        "salaryRange": [
+            2504994,
+            6776376
+        ]
+    },
+    {
+        "jobId": "J032",
+        "title": "Cybersecurity Engineer",
+        "category": "IT",
+        "company": "Amazon",
+        "companyLogo": "https://logo.clearbit.com/amazon.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Database Administrator at Amazon.",
+        "skillsRequired": [
+            "AWS",
+            "JavaScript",
+            "React"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-9 years",
+        "salaryRange": [
+            1479245,
+            8341097
+        ]
+    },
+    {
+        "jobId": "J033",
+        "title": "ML Engineer",
+        "category": "FinTech",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Database Administrator at IBM.",
+        "skillsRequired": [
+            "Blockchain Security",
+            "Solidity",
+            "Smart Contracts"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-7 years",
+        "salaryRange": [
+            3569821,
+            8680728
+        ]
+    },
+    {
+        "jobId": "J034",
+        "title": "Data Scientist",
+        "category": "Data Science",
+        "company": "Cisco",
+        "companyLogo": "https://logo.clearbit.com/cisco.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a AI Research Scientist at Cisco.",
+        "skillsRequired": [
+            "TensorFlow",
+            "NLP",
+            "SQL"
+        ],
+        "jobType": "Contract",
+        "experience": "4-11 years",
+        "salaryRange": [
+            1282181,
+            7138241
+        ]
+    },
+    {
+        "jobId": "J035",
+        "title": "Software Engineer",
+        "category": "Data Science",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a QA Engineer at Microsoft.",
+        "skillsRequired": [
+            "SQL",
+            "NLP",
+            "TensorFlow"
+        ],
+        "jobType": "Internship",
+        "experience": "4-8 years",
+        "salaryRange": [
+            3387423,
+            6971607
+        ]
+    },
+    {
+        "jobId": "J036",
+        "title": "Cybersecurity Engineer",
+        "category": "FinTech",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a DevOps Engineer at Netflix.",
+        "skillsRequired": [
+            "Smart Contracts",
+            "Blockchain Security",
+            "Solidity"
+        ],
+        "jobType": "Contract",
+        "experience": "5-7 years",
+        "salaryRange": [
+            1482677,
+            7683172
+        ]
+    },
+    {
+        "jobId": "J037",
+        "title": "Database Administrator",
+        "category": "Data Science",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "Tokyo",
+        "description": "Exciting opportunity for a Software Engineer at Microsoft.",
+        "skillsRequired": [
+            "SQL",
+            "Deep Learning",
+            "NLP"
+        ],
+        "jobType": "Contract",
+        "experience": "5-8 years",
+        "salaryRange": [
+            2533180,
+            7151249
+        ]
+    },
+    {
+        "jobId": "J038",
+        "title": "QA Engineer",
+        "category": "Cybersecurity",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Data Scientist at Goldman Sachs.",
+        "skillsRequired": [
+            "Firewalls",
+            "Penetration Testing",
+            "Encryption"
+        ],
+        "jobType": "Internship",
+        "experience": "3-11 years",
+        "salaryRange": [
+            1594362,
+            5388774
+        ]
+    },
+    {
+        "jobId": "J039",
+        "title": "Backend Developer",
+        "category": "IT",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Database Administrator at Facebook.",
+        "skillsRequired": [
+            "React",
+            "AWS",
+            "Node.js"
+        ],
+        "jobType": "Remote",
+        "experience": "1-6 years",
+        "salaryRange": [
+            3843989,
+            8668963
+        ]
+    },
+    {
+        "jobId": "J040",
+        "title": "AI Research Scientist",
+        "category": "FinTech",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Data Scientist at Goldman Sachs.",
+        "skillsRequired": [
+            "Smart Contracts",
+            "Solidity",
+            "Blockchain Security"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-8 years",
+        "salaryRange": [
+            3188215,
+            6868570
+        ]
+    },
+    {
+        "jobId": "J041",
+        "title": "Product Manager",
+        "category": "Finance",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Blockchain Developer at OpenAI.",
+        "skillsRequired": [
+            "Financial Modeling",
+            "Risk Management",
+            "Valuation"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-6 years",
+        "salaryRange": [
+            2146617,
+            7577249
+        ]
+    },
+    {
+        "jobId": "J042",
+        "title": "Cloud Engineer",
+        "category": "DevOps",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Full Stack Developer at Goldman Sachs.",
+        "skillsRequired": [
+            "AWS",
+            "Docker",
+            "CI/CD"
+        ],
+        "jobType": "Internship",
+        "experience": "5-7 years",
+        "salaryRange": [
+            3564564,
+            7125049
+        ]
+    },
+    {
+        "jobId": "J043",
+        "title": "Product Manager",
+        "category": "FinTech",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Backend Developer at Coinbase.",
+        "skillsRequired": [
+            "Blockchain Security",
+            "Ethereum",
+            "Smart Contracts"
+        ],
+        "jobType": "Internship",
+        "experience": "2-6 years",
+        "salaryRange": [
+            3779791,
+            5476510
+        ]
+    },
+    {
+        "jobId": "J044",
+        "title": "Frontend Developer",
+        "category": "IT",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "Tokyo",
+        "description": "Exciting opportunity for a Product Manager at Goldman Sachs.",
+        "skillsRequired": [
+            "JavaScript",
+            "AWS",
+            "MongoDB"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-9 years",
+        "salaryRange": [
+            1432383,
+            7375404
+        ]
+    },
+    {
+        "jobId": "J045",
+        "title": "ML Engineer",
+        "category": "IT",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Database Administrator at OpenAI.",
+        "skillsRequired": [
+            "Node.js",
+            "AWS",
+            "JavaScript"
+        ],
+        "jobType": "Contract",
+        "experience": "1-8 years",
+        "salaryRange": [
+            1511294,
+            7254283
+        ]
+    },
+    {
+        "jobId": "J046",
+        "title": "ML Engineer",
+        "category": "Cybersecurity",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "Los Angeles",
+        "description": "Exciting opportunity for a Product Manager at Microsoft.",
+        "skillsRequired": [
+            "Penetration Testing",
+            "Encryption",
+            "Firewalls"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-8 years",
+        "salaryRange": [
+            3050775,
+            6365232
+        ]
+    },
+    {
+        "jobId": "J047",
+        "title": "Cybersecurity Engineer",
+        "category": "Cybersecurity",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Data Scientist at Google.",
+        "skillsRequired": [
+            "Network Security",
+            "Firewalls",
+            "Encryption"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-8 years",
+        "salaryRange": [
+            3881744,
+            5985174
+        ]
+    },
+    {
+        "jobId": "J048",
+        "title": "Blockchain Developer",
+        "category": "IT",
+        "company": "Amazon",
+        "companyLogo": "https://logo.clearbit.com/amazon.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Product Manager at Amazon.",
+        "skillsRequired": [
+            "Node.js",
+            "React",
+            "MongoDB"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-6 years",
+        "salaryRange": [
+            1138843,
+            9800154
+        ]
+    },
+    {
+        "jobId": "J049",
+        "title": "AI Research Scientist",
+        "category": "IT",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a Frontend Developer at Facebook.",
+        "skillsRequired": [
+            "JavaScript",
+            "AWS",
+            "React"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-6 years",
+        "salaryRange": [
+            1645992,
+            5712730
+        ]
+    },
+    {
+        "jobId": "J050",
+        "title": "Database Administrator",
+        "category": "Cybersecurity",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Cloud Engineer at Netflix.",
+        "skillsRequired": [
+            "Penetration Testing",
+            "Encryption",
+            "Network Security"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-12 years",
+        "salaryRange": [
+            2511949,
+            6986070
+        ]
+    },
+    {
+        "jobId": "J051",
+        "title": "ML Engineer",
+        "category": "IT",
+        "company": "Amazon",
+        "companyLogo": "https://logo.clearbit.com/amazon.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a DevOps Engineer at Amazon.",
+        "skillsRequired": [
+            "AWS",
+            "Node.js",
+            "MongoDB"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-10 years",
+        "salaryRange": [
+            3236603,
+            9515068
+        ]
+    },
+    {
+        "jobId": "J052",
+        "title": "Data Scientist",
+        "category": "IT",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Data Scientist at Google.",
+        "skillsRequired": [
+            "AWS",
+            "Node.js",
+            "React"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-9 years",
+        "salaryRange": [
+            1486751,
+            5877459
+        ]
+    },
+    {
+        "jobId": "J053",
+        "title": "QA Engineer",
+        "category": "DevOps",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Software Engineer at OpenAI.",
+        "skillsRequired": [
+            "Kubernetes",
+            "CI/CD",
+            "Docker"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-10 years",
+        "salaryRange": [
+            1006728,
+            8635737
+        ]
+    },
+    {
+        "jobId": "J054",
+        "title": "Full Stack Developer",
+        "category": "FinTech",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Product Manager at Facebook.",
+        "skillsRequired": [
+            "Ethereum",
+            "Blockchain Security",
+            "Solidity"
+        ],
+        "jobType": "Internship",
+        "experience": "5-12 years",
+        "salaryRange": [
+            1768780,
+            8746512
+        ]
+    },
+    {
+        "jobId": "J055",
+        "title": "Cloud Engineer",
+        "category": "Cybersecurity",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Investment Analyst at Google.",
+        "skillsRequired": [
+            "Network Security",
+            "Penetration Testing",
+            "Firewalls"
+        ],
+        "jobType": "Remote",
+        "experience": "5-7 years",
+        "salaryRange": [
+            2190183,
+            7821818
+        ]
+    },
+    {
+        "jobId": "J056",
+        "title": "Data Scientist",
+        "category": "Artificial Intelligence",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Investment Analyst at Goldman Sachs.",
+        "skillsRequired": [
+            "Python",
+            "Computer Vision",
+            "PyTorch"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-11 years",
+        "salaryRange": [
+            1657341,
+            7334451
+        ]
+    },
+    {
+        "jobId": "J057",
+        "title": "Product Manager",
+        "category": "Artificial Intelligence",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "Toronto",
+        "description": "Exciting opportunity for a ML Engineer at IBM.",
+        "skillsRequired": [
+            "Python",
+            "PyTorch",
+            "Deep Learning"
+        ],
+        "jobType": "Contract",
+        "experience": "3-9 years",
+        "salaryRange": [
+            3349942,
+            7611594
+        ]
+    },
+    {
+        "jobId": "J058",
+        "title": "Cloud Engineer",
+        "category": "Data Science",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Product Manager at Netflix.",
+        "skillsRequired": [
+            "NLP",
+            "TensorFlow",
+            "Python"
+        ],
+        "jobType": "Internship",
+        "experience": "5-6 years",
+        "salaryRange": [
+            3504381,
+            5711700
+        ]
+    },
+    {
+        "jobId": "J059",
+        "title": "Software Engineer",
+        "category": "IT",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Los Angeles",
+        "description": "Exciting opportunity for a Cloud Engineer at Google.",
+        "skillsRequired": [
+            "JavaScript",
+            "MongoDB",
+            "AWS"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-8 years",
+        "salaryRange": [
+            2714172,
+            8277297
+        ]
+    },
+    {
+        "jobId": "J060",
+        "title": "Database Administrator",
+        "category": "FinTech",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a QA Engineer at Netflix.",
+        "skillsRequired": [
+            "Blockchain Security",
+            "Ethereum",
+            "Solidity"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-12 years",
+        "salaryRange": [
+            1610541,
+            9576094
+        ]
+    },
+    {
+        "jobId": "J061",
+        "title": "AI Research Scientist",
+        "category": "Cybersecurity",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "Toronto",
+        "description": "Exciting opportunity for a Cloud Engineer at Goldman Sachs.",
+        "skillsRequired": [
+            "Encryption",
+            "Penetration Testing",
+            "Firewalls"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-6 years",
+        "salaryRange": [
+            1570252,
+            9862397
+        ]
+    },
+    {
+        "jobId": "J062",
+        "title": "Cloud Engineer",
+        "category": "DevOps",
+        "company": "Cisco",
+        "companyLogo": "https://logo.clearbit.com/cisco.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Software Engineer at Cisco.",
+        "skillsRequired": [
+            "Docker",
+            "Kubernetes",
+            "AWS"
+        ],
+        "jobType": "Internship",
+        "experience": "4-12 years",
+        "salaryRange": [
+            1555081,
+            8360354
+        ]
+    },
+    {
+        "jobId": "J063",
+        "title": "Investment Analyst",
+        "category": "FinTech",
+        "company": "Cisco",
+        "companyLogo": "https://logo.clearbit.com/cisco.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a Full Stack Developer at Cisco.",
+        "skillsRequired": [
+            "Smart Contracts",
+            "Ethereum",
+            "Solidity"
+        ],
+        "jobType": "Part-time",
+        "experience": "1-9 years",
+        "salaryRange": [
+            3017655,
+            5117751
+        ]
+    },
+    {
+        "jobId": "J064",
+        "title": "DevOps Engineer",
+        "category": "Artificial Intelligence",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Blockchain Developer at Coinbase.",
+        "skillsRequired": [
+            "Computer Vision",
+            "PyTorch",
+            "Deep Learning"
+        ],
+        "jobType": "Internship",
+        "experience": "2-6 years",
+        "salaryRange": [
+            3068562,
+            7643129
+        ]
+    },
+    {
+        "jobId": "J065",
+        "title": "Blockchain Developer",
+        "category": "Data Science",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Blockchain Developer at Netflix.",
+        "skillsRequired": [
+            "Python",
+            "TensorFlow",
+            "Deep Learning"
+        ],
+        "jobType": "Part-time",
+        "experience": "3-10 years",
+        "salaryRange": [
+            3466628,
+            6697633
+        ]
+    },
+    {
+        "jobId": "J066",
+        "title": "Blockchain Developer",
+        "category": "Finance",
+        "company": "Cisco",
+        "companyLogo": "https://logo.clearbit.com/cisco.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Backend Developer at Cisco.",
+        "skillsRequired": [
+            "Excel",
+            "Financial Modeling",
+            "Valuation"
+        ],
+        "jobType": "Part-time",
+        "experience": "1-9 years",
+        "salaryRange": [
+            2163420,
+            8618678
+        ]
+    },
+    {
+        "jobId": "J067",
+        "title": "Product Manager",
+        "category": "Artificial Intelligence",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Software Engineer at Goldman Sachs.",
+        "skillsRequired": [
+            "Python",
+            "Computer Vision",
+            "PyTorch"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-9 years",
+        "salaryRange": [
+            2056104,
+            6129919
+        ]
+    },
+    {
+        "jobId": "J068",
+        "title": "Data Scientist",
+        "category": "Data Science",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Investment Analyst at OpenAI.",
+        "skillsRequired": [
+            "Deep Learning",
+            "Python",
+            "NLP"
+        ],
+        "jobType": "Internship",
+        "experience": "1-10 years",
+        "salaryRange": [
+            3861015,
+            7492098
+        ]
+    },
+    {
+        "jobId": "J069",
+        "title": "Investment Analyst",
+        "category": "FinTech",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "London",
+        "description": "Exciting opportunity for a DevOps Engineer at IBM.",
+        "skillsRequired": [
+            "Ethereum",
+            "Smart Contracts",
+            "Blockchain Security"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-8 years",
+        "salaryRange": [
+            3671270,
+            5615715
+        ]
+    },
+    {
+        "jobId": "J070",
+        "title": "Data Scientist",
+        "category": "DevOps",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "London",
+        "description": "Exciting opportunity for a QA Engineer at Netflix.",
+        "skillsRequired": [
+            "CI/CD",
+            "Kubernetes",
+            "AWS"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-8 years",
+        "salaryRange": [
+            3257529,
+            5819068
+        ]
+    },
+    {
+        "jobId": "J071",
+        "title": "QA Engineer",
+        "category": "DevOps",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a ML Engineer at Facebook.",
+        "skillsRequired": [
+            "AWS",
+            "CI/CD",
+            "Kubernetes"
+        ],
+        "jobType": "Contract",
+        "experience": "3-11 years",
+        "salaryRange": [
+            3879386,
+            5899304
+        ]
+    },
+    {
+        "jobId": "J072",
+        "title": "Product Manager",
+        "category": "Data Science",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a Product Manager at Facebook.",
+        "skillsRequired": [
+            "TensorFlow",
+            "Python",
+            "SQL"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-8 years",
+        "salaryRange": [
+            1609334,
+            6275691
+        ]
+    },
+    {
+        "jobId": "J073",
+        "title": "Cloud Engineer",
+        "category": "Data Science",
+        "company": "Amazon",
+        "companyLogo": "https://logo.clearbit.com/amazon.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a Backend Developer at Amazon.",
+        "skillsRequired": [
+            "Deep Learning",
+            "SQL",
+            "NLP"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-8 years",
+        "salaryRange": [
+            2504413,
+            7232304
+        ]
+    },
+    {
+        "jobId": "J074",
+        "title": "QA Engineer",
+        "category": "Cybersecurity",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Frontend Developer at Microsoft.",
+        "skillsRequired": [
+            "Firewalls",
+            "Penetration Testing",
+            "Network Security"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-8 years",
+        "salaryRange": [
+            1234193,
+            7566521
+        ]
+    },
+    {
+        "jobId": "J075",
+        "title": "Frontend Developer",
+        "category": "Finance",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Full Stack Developer at OpenAI.",
+        "skillsRequired": [
+            "Risk Management",
+            "Excel",
+            "Valuation"
+        ],
+        "jobType": "Contract",
+        "experience": "3-9 years",
+        "salaryRange": [
+            1796573,
+            6887339
+        ]
+    },
+    {
+        "jobId": "J076",
+        "title": "Full Stack Developer",
+        "category": "Artificial Intelligence",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Software Engineer at Coinbase.",
+        "skillsRequired": [
+            "PyTorch",
+            "Computer Vision",
+            "Deep Learning"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-9 years",
+        "salaryRange": [
+            2506449,
+            8094332
+        ]
+    },
+    {
+        "jobId": "J077",
+        "title": "QA Engineer",
+        "category": "DevOps",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Los Angeles",
+        "description": "Exciting opportunity for a DevOps Engineer at OpenAI.",
+        "skillsRequired": [
+            "Docker",
+            "AWS",
+            "CI/CD"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-8 years",
+        "salaryRange": [
+            1684738,
+            9998381
+        ]
+    },
+    {
+        "jobId": "J078",
+        "title": "Backend Developer",
+        "category": "Artificial Intelligence",
+        "company": "Amazon",
+        "companyLogo": "https://logo.clearbit.com/amazon.com",
+        "location": "Toronto",
+        "description": "Exciting opportunity for a Cloud Engineer at Amazon.",
+        "skillsRequired": [
+            "Python",
+            "Deep Learning",
+            "Computer Vision"
+        ],
+        "jobType": "Internship",
+        "experience": "2-6 years",
+        "salaryRange": [
+            1111155,
+            5448842
+        ]
+    },
+    {
+        "jobId": "J079",
+        "title": "Cybersecurity Engineer",
+        "category": "Cybersecurity",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a Backend Developer at OpenAI.",
+        "skillsRequired": [
+            "Penetration Testing",
+            "Network Security",
+            "Encryption"
+        ],
+        "jobType": "Full-time",
+        "experience": "5-12 years",
+        "salaryRange": [
+            3140591,
+            8958470
+        ]
+    },
+    {
+        "jobId": "J080",
+        "title": "Full Stack Developer",
+        "category": "Data Science",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a Frontend Developer at OpenAI.",
+        "skillsRequired": [
+            "TensorFlow",
+            "NLP",
+            "Deep Learning"
+        ],
+        "jobType": "Internship",
+        "experience": "1-6 years",
+        "salaryRange": [
+            3663597,
+            8883269
+        ]
+    },
+    {
+        "jobId": "J081",
+        "title": "Database Administrator",
+        "category": "Cybersecurity",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "San Francisco",
+        "description": "Exciting opportunity for a AI Research Scientist at Google.",
+        "skillsRequired": [
+            "Encryption",
+            "Firewalls",
+            "Penetration Testing"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-8 years",
+        "salaryRange": [
+            3127652,
+            6427872
+        ]
+    },
+    {
+        "jobId": "J082",
+        "title": "Product Manager",
+        "category": "IT",
+        "company": "Microsoft",
+        "companyLogo": "https://logo.clearbit.com/microsoft.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Full Stack Developer at Microsoft.",
+        "skillsRequired": [
+            "Node.js",
+            "AWS",
+            "React"
+        ],
+        "jobType": "Full-time",
+        "experience": "4-12 years",
+        "salaryRange": [
+            2436986,
+            6425830
+        ]
+    },
+    {
+        "jobId": "J083",
+        "title": "Full Stack Developer",
+        "category": "Artificial Intelligence",
+        "company": "Facebook",
+        "companyLogo": "https://logo.clearbit.com/facebook.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Product Manager at Facebook.",
+        "skillsRequired": [
+            "Deep Learning",
+            "Python",
+            "Computer Vision"
+        ],
+        "jobType": "Part-time",
+        "experience": "3-6 years",
+        "salaryRange": [
+            3982572,
+            7046753
+        ]
+    },
+    {
+        "jobId": "J084",
+        "title": "Data Scientist",
+        "category": "Data Science",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Investment Analyst at Google.",
+        "skillsRequired": [
+            "Python",
+            "SQL",
+            "Deep Learning"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-9 years",
+        "salaryRange": [
+            3053876,
+            7809133
+        ]
+    },
+    {
+        "jobId": "J085",
+        "title": "Cloud Engineer",
+        "category": "IT",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Blockchain Developer at Google.",
+        "skillsRequired": [
+            "JavaScript",
+            "AWS",
+            "Node.js"
+        ],
+        "jobType": "Remote",
+        "experience": "3-9 years",
+        "salaryRange": [
+            2331315,
+            6769682
+        ]
+    },
+    {
+        "jobId": "J086",
+        "title": "Full Stack Developer",
+        "category": "Finance",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Software Engineer at Coinbase.",
+        "skillsRequired": [
+            "Excel",
+            "Valuation",
+            "Financial Modeling"
+        ],
+        "jobType": "Contract",
+        "experience": "5-7 years",
+        "salaryRange": [
+            1268345,
+            7225527
+        ]
+    },
+    {
+        "jobId": "J087",
+        "title": "Full Stack Developer",
+        "category": "FinTech",
+        "company": "OpenAI",
+        "companyLogo": "https://logo.clearbit.com/openai.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Database Administrator at OpenAI.",
+        "skillsRequired": [
+            "Solidity",
+            "Smart Contracts",
+            "Ethereum"
+        ],
+        "jobType": "Internship",
+        "experience": "1-7 years",
+        "salaryRange": [
+            1392061,
+            6690143
+        ]
+    },
+    {
+        "jobId": "J088",
+        "title": "Product Manager",
+        "category": "Data Science",
+        "company": "Cisco",
+        "companyLogo": "https://logo.clearbit.com/cisco.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a DevOps Engineer at Cisco.",
+        "skillsRequired": [
+            "Python",
+            "SQL",
+            "Deep Learning"
+        ],
+        "jobType": "Internship",
+        "experience": "2-8 years",
+        "salaryRange": [
+            2079478,
+            7077908
+        ]
+    },
+    {
+        "jobId": "J089",
+        "title": "ML Engineer",
+        "category": "IT",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Frontend Developer at Netflix.",
+        "skillsRequired": [
+            "React",
+            "MongoDB",
+            "Node.js"
+        ],
+        "jobType": "Contract",
+        "experience": "3-12 years",
+        "salaryRange": [
+            1976162,
+            5161777
+        ]
+    },
+    {
+        "jobId": "J090",
+        "title": "Full Stack Developer",
+        "category": "Cybersecurity",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Cybersecurity Engineer at Netflix.",
+        "skillsRequired": [
+            "Penetration Testing",
+            "Firewalls",
+            "Network Security"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-9 years",
+        "salaryRange": [
+            1792613,
+            6398768
+        ]
+    },
+    {
+        "jobId": "J091",
+        "title": "Cloud Engineer",
+        "category": "IT",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a ML Engineer at Netflix.",
+        "skillsRequired": [
+            "MongoDB",
+            "JavaScript",
+            "Node.js"
+        ],
+        "jobType": "Contract",
+        "experience": "2-6 years",
+        "salaryRange": [
+            1284469,
+            8089609
+        ]
+    },
+    {
+        "jobId": "J092",
+        "title": "Frontend Developer",
+        "category": "Data Science",
+        "company": "Coinbase",
+        "companyLogo": "https://logo.clearbit.com/coinbase.com",
+        "location": "Tokyo",
+        "description": "Exciting opportunity for a Frontend Developer at Coinbase.",
+        "skillsRequired": [
+            "NLP",
+            "Deep Learning",
+            "SQL"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-11 years",
+        "salaryRange": [
+            1996348,
+            7541881
+        ]
+    },
+    {
+        "jobId": "J093",
+        "title": "AI Research Scientist",
+        "category": "FinTech",
+        "company": "Cisco",
+        "companyLogo": "https://logo.clearbit.com/cisco.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a AI Research Scientist at Cisco.",
+        "skillsRequired": [
+            "Smart Contracts",
+            "Blockchain Security",
+            "Ethereum"
+        ],
+        "jobType": "Remote",
+        "experience": "1-7 years",
+        "salaryRange": [
+            1582055,
+            7615352
+        ]
+    },
+    {
+        "jobId": "J094",
+        "title": "Full Stack Developer",
+        "category": "Data Science",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "Hyderabad",
+        "description": "Exciting opportunity for a DevOps Engineer at Goldman Sachs.",
+        "skillsRequired": [
+            "SQL",
+            "Deep Learning",
+            "NLP"
+        ],
+        "jobType": "Part-time",
+        "experience": "4-10 years",
+        "salaryRange": [
+            1649964,
+            7061148
+        ]
+    },
+    {
+        "jobId": "J095",
+        "title": "ML Engineer",
+        "category": "Data Science",
+        "company": "Google",
+        "companyLogo": "https://logo.clearbit.com/google.com",
+        "location": "Mumbai",
+        "description": "Exciting opportunity for a Software Engineer at Google.",
+        "skillsRequired": [
+            "SQL",
+            "TensorFlow",
+            "Python"
+        ],
+        "jobType": "Internship",
+        "experience": "1-8 years",
+        "salaryRange": [
+            2276810,
+            6044454
+        ]
+    },
+    {
+        "jobId": "J096",
+        "title": "Database Administrator",
+        "category": "Cybersecurity",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "Berlin",
+        "description": "Exciting opportunity for a Software Engineer at IBM.",
+        "skillsRequired": [
+            "Firewalls",
+            "Network Security",
+            "Encryption"
+        ],
+        "jobType": "Full-time",
+        "experience": "2-9 years",
+        "salaryRange": [
+            3543333,
+            6351834
+        ]
+    },
+    {
+        "jobId": "J097",
+        "title": "Backend Developer",
+        "category": "IT",
+        "company": "Netflix",
+        "companyLogo": "https://logo.clearbit.com/netflix.com",
+        "location": "London",
+        "description": "Exciting opportunity for a Cybersecurity Engineer at Netflix.",
+        "skillsRequired": [
+            "AWS",
+            "React",
+            "MongoDB"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-10 years",
+        "salaryRange": [
+            3631296,
+            5581205
+        ]
+    },
+    {
+        "jobId": "J098",
+        "title": "DevOps Engineer",
+        "category": "Data Science",
+        "company": "Goldman Sachs",
+        "companyLogo": "https://logo.clearbit.com/goldmansachs.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Frontend Developer at Goldman Sachs.",
+        "skillsRequired": [
+            "Python",
+            "Deep Learning",
+            "SQL"
+        ],
+        "jobType": "Full-time",
+        "experience": "1-7 years",
+        "salaryRange": [
+            1096335,
+            9686136
+        ]
+    },
+    {
+        "jobId": "J099",
+        "title": "Cloud Engineer",
+        "category": "Data Science",
+        "company": "IBM",
+        "companyLogo": "https://logo.clearbit.com/ibm.com",
+        "location": "Bangalore",
+        "description": "Exciting opportunity for a Backend Developer at IBM.",
+        "skillsRequired": [
+            "SQL",
+            "Deep Learning",
+            "TensorFlow"
+        ],
+        "jobType": "Full-time",
+        "experience": "3-12 years",
+        "salaryRange": [
+            2500116,
+            6296508
+        ]
+    },
+    {
+        "jobId": "J100",
+        "title": "Software Engineer",
+        "category": "FinTech",
+        "company": "Amazon",
+        "companyLogo": "https://logo.clearbit.com/amazon.com",
+        "location": "New York",
+        "description": "Exciting opportunity for a Blockchain Developer at Amazon.",
+        "skillsRequired": [
+            "Blockchain Security",
+            "Ethereum",
+            "Smart Contracts"
+        ],
+        "jobType": "Remote",
+        "experience": "5-9 years",
+        "salaryRange": [
+            2276866,
+            8175801
+        ]
+    }
+]
