@@ -50,14 +50,7 @@ hackathonapp.put('/participate', async (req, res) => {
         res.status(500).json({ message: 'Error adding participant', error: error.message });
     }
 });
-
-
-<<<<<<< HEAD
-// ✅ Submit Hackathon Solution
-hackathonapp.put('/submit', async (req, res) => {
-=======
 hackathonapp.put('/submit',verifytoken, async (req, res) => {
->>>>>>> b7fbea04f61f5fd7bf395b546ac213d0d07f0bb3
     try {
         const { hackathonId, username } = req.body;
         const hackathon = await Hackathon.findOne({ hackathonId });
