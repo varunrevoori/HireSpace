@@ -2,10 +2,10 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const expressAsyncHandler = require('express-async-handler');
-const Company = require('../models/companymodel');
+const Company = require('../../models/company/companymodel'); 
 require('dotenv').config();
 const { v4: uuidv4 } = require('uuid');
-const Job = require('../models/jobmodel');
+const Job = require('../../models/jobs/jobmodel');
 
 const companyApp = express.Router();
 

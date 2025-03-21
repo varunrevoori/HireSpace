@@ -1,8 +1,8 @@
 const express = require("express");
 const expressAsyncHandler = require("express-async-handler");
-const Job = require("../models/jobmodel");
-const verifyToken = require('../middlewares/verifytoken');
-const Student = require("../models/studentmodel");
+const Job = require("../../models/jobs/jobmodel");
+const verifyToken = require('../../middlewares/verifytoken');
+const Student = require("../../models/student/studentmodel");
 const jobAppRouter = express.Router();
 
 // ✅ Get all job postings

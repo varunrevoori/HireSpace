@@ -1,9 +1,9 @@
 const express = require('express');
 const axios = require('axios');
 const mongoose = require('mongoose');
-const Hackathon = require('../models/hackthonmodel');
+const Hackathon = require('../../models/hackthon/hackthonmodel');
 const { router } = require('./githubAuth');
-const verifytoken = require('../middlewares/verifytoken');
+const verifytoken = require('../../middlewares/verifytoken');
 const { verify } = require('jsonwebtoken');
 
 const hackathonapp = express.Router();

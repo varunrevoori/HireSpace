@@ -1,0 +1,73 @@
+/* Reuse styles from JobCategory.css */
+.category-card {
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+  }
+  
+  .category-card:hover {
+    border-color: #4361ee;
+    transform: translateY(-5px);
+  }
+  
+  .category-card:hover .category-icon {
+    background-color: #4361ee;
+    color: white;
+  }
+  
+  .category-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(67, 97, 238, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .category-icon i {
+    font-size: 28px;
+    color: #4361ee;
+    transition: all 0.3s ease;
+  }
+  
+  .category-card:hover .category-icon i {
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .category-count {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 576px) {
+    .category-icon {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .category-icon i {
+      font-size: 24px;
+    }
+  
+    .card-title {
+      font-size: 0.9rem;
+    }
+  
+    .category-count {
+      font-size: 0.8rem;
+    }
+  }

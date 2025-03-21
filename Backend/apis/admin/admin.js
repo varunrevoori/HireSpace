@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const expressAsyncHandler = require('express-async-handler');
-const Admin = require('../models/adminmodel'); // Ensure correct path to model
+const Admin = require('../../models/admin/adminmodel'); // Ensure correct path to model
 require('dotenv').config();
 
 const adminApp = express.Router();

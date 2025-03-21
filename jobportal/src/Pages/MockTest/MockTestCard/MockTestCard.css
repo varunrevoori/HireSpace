@@ -1,0 +1,117 @@
+.mocktest-card {
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border-radius: 12px;
+  }
+  
+  .mocktest-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mocktest-card .card-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .domain-name {
+    color: #4361ee;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .test-image {
+    width: 48px;
+    height: 48px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .test-details {
+    font-size: 0.9rem;
+    margin: 15px 0;
+  }
+  
+  .test-detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    color: #6c757d;
+  }
+  
+  .test-detail i {
+    width: 20px;
+    margin-right: 8px;
+    color: #4361ee;
+  }
+  
+  .category-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .category-badge {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: #4361ee;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+  
+  .card-footer {
+    padding: 16px;
+  }
+  
+  .card-footer .btn {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 10px;
+    background-color: #4361ee;
+    border-color: #4361ee;
+  }
+  
+  .card-footer .btn:hover {
+    background-color: #3651d6;
+    border-color: #3651d6;
+  }
+  
+  .difficulty-beginner {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .difficulty-intermediate {
+    background-color: #ffc107;
+    color: #212529;
+  }
+  
+  .difficulty-advanced {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  @media (max-width: 576px) {
+    .mocktest-card .card-title {
+      font-size: 1rem;
+    }
+  
+    .domain-name {
+      font-size: 0.85rem;
+    }
+  
+    .test-details {
+      font-size: 0.85rem;
+    }
+  
+    .category-badge {
+      font-size: 0.75rem;
+    }
+  }

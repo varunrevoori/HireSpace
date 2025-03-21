@@ -1,0 +1,76 @@
+
+/* Reuse styles from JobListing.css for consistency */
+.results-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+  }
+  
+  .filter-card {
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  }
+  
+  .form-label {
+    font-weight: 500;
+    color: #495057;
+  }
+  
+  .form-select,
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+  }
+  
+  .input-group-text {
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+  }
+  
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section-title {
+    font-weight: 700;
+    color: #212529;
+  }
+  
+  .btn-primary {
+    background-color: #4361ee;
+    border-color: #4361ee;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3651d6;
+    border-color: #3651d6;
+  }
+  
+  .btn-outline-secondary {
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .results-title {
+      font-size: 2rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .form-select,
+    .form-control {
+      font-size: 0.9rem;
+    }
+  }

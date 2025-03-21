@@ -143,6 +143,97 @@ Content-Type: application/json
 }
 
 
+### Create a mock test
+POST http://localhost:5001/apis/mocktests/create
+Content-Type: application/json
+
+{
+  "mockTestId": "mock123",
+  "name": "JavaScript Basics",
+  "image": "/placeholder.svg",
+  "category": "Programming",
+  "domain": "Web Development",
+  "difficulty": "Beginner",
+  "totalQuestions": 10,
+  "totalMarks": 100,
+  "passingMarks": 50,
+  "timeLimit": 60,
+  "rating": 4.5,
+  "questions": [
+    {
+      "type": "multiple-choice",
+      "question": "What is the output of `console.log(typeof [])`?",
+      "options": ["object", "array", "undefined", "string"],
+      "correctAnswer": "object",
+      "maxScore": 10
+    },
+    {
+      "type": "multiple-choice",
+      "question": "Which keyword is used to declare a variable in JavaScript?",
+      "options": ["var", "define", "let", "set"],
+      "correctAnswer": "let",
+      "maxScore": 10
+    }
+  ]
+}
+
+### Get all mock tests
+GET http://localhost:5001/apis/mocktests
+
+### Get a mock test by ID
+GET http://localhost:5001/apis/mocktests/mock123
+
+### Update a mock test
+PUT http://localhost:5001/apis/mocktests/update/mock123
+Content-Type: application/json
+
+{
+  "name": "Updated JavaScript Basics",
+  "difficulty": "Intermediate"
+}
+
+### Delete a mock test
+DELETE http://localhost:5001/apis/mocktests/delete/mock123
+
+### Submit a mock test attempt
+POST http://localhost:5001/apis/mocktests/attempt
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "mockTestId": "mock123",
+  "score": 70,
+  "totalMarks": 100,
+  "answers": [
+    {
+      "questionId": "q1",
+      "type": "multiple-choice",
+      "selectedAnswer": "object",
+      "isCorrect": true,
+      "score": 10
+    },
+    {
+      "questionId": "q2",
+      "type": "multiple-choice",
+      "selectedAnswer": "let",
+      "isCorrect": true,
+      "score": 10
+    }
+  ]
+}
+
+### Get user attempt history
+GET http://localhost:4000/api/mocktest/attempts/john_doe
+
+
+
+
+
+
+
+
+
+
 
 
 

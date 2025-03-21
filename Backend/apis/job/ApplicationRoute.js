@@ -4,8 +4,8 @@ const multer = require("multer")
 const path = require("path")
 const fs = require("fs")
 
-const Application = require("../models/Applicationmodel")
-const Job = require("../models/jobmodel")
+const Application = require("../../models/jobs/Applicationmodel")
+const Job = require("../../models/jobs/jobmodel")
 
 // Configure multer for file uploads
 const storage = multer.diskStorage({

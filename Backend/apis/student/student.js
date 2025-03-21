@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const expressAsyncHandler = require('express-async-handler');
-const Student = require('../models/studentmodel');
+const Student = require('../../models/student/studentmodel');
 require('dotenv').config();
 
 const studentApp = express.Router();

@@ -1,0 +1,90 @@
+.test-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+  }
+  
+  .test-image {
+    width: 64px;
+    height: 64px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .domain-name {
+    color: #4361ee;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .form-check {
+    margin-bottom: 10px;
+  }
+  
+  .form-check-input {
+    margin-right: 10px;
+  }
+  
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+  }
+  
+  .test-success-card {
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .success-icon {
+    font-size: 4rem;
+    color: #28a745;
+  }
+  
+  .btn-primary {
+    background-color: #4361ee;
+    border-color: #4361ee;
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3651d6;
+    border-color: #3651d6;
+  }
+  
+  .btn-outline-primary {
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .test-title {
+      font-size: 2rem;
+    }
+  
+    .domain-name {
+      font-size: 0.9rem;
+    }
+  
+    .card-title {
+      font-size: 1.25rem;
+    }
+  
+    .success-icon {
+      font-size: 3rem;
+    }
+  }
