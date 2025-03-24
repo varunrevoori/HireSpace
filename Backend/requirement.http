@@ -4,9 +4,9 @@ Content-Type: application/json
 
 {
     "userType": "student",
-    "username": "student12",
-    "email": "student12@gmail.com",
-    "password": "password123",
+    "username": "student1",
+    "email": "student1@gmail.com",
+    "password": "password12",
     "skills": ["JavaScript", "React"],
     "education": ["BSc in Computer Science"],
     "projects": ["Project A", "Project B"]
@@ -17,8 +17,8 @@ POST http://localhost:5001/apis/student/login
 Content-Type: application/json
 
 {
-    "email": "student12@gmail.com",
-    "password": "password123"
+    "email": "student1@gmail.com",
+    "password": "password12"
 }
 
 ### Company Registration

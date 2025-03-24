@@ -72,5 +72,29 @@ jobAppRouter.post('/create', verifyToken, expressAsyncHandler(async (req, res) =
         res.status(500).json({ message: "Internal Server Error", error: error.message });
     }
 }));
+jobAppRouter.post('/mock-interview/start', async (req, res) => {
+  const { jobId } = req.body;
+  try {
+    const job = await Job.findById(jobId);
+    if (!job) return res.status(404).json({ message: 'Job not found' });
+    
+    const question = await generateQuestion(job);
+    res.json({ question });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
+// Submit answer and get feedback + follow-up question
+jobAppRouter.post('/mock-interview/answer', async (req, res) => {
+  const { question, answer } = req.body;
+  try {
+    const feedback = await generateFeedback(question, answer);
+    const followUp = await generateFollowUp();
+    res.json({ feedback, followUp });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
 
 module.exports = jobAppRouter;

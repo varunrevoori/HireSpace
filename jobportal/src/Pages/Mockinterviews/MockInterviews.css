@@ -1,0 +1,70 @@
+.App {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input, textarea {
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  
+  .mock-interview {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
+  
+  .mock-interview textarea {
+    width: 100%;
+    min-height: 100px;
+  }
+  
+  .interview-history {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .interview-history div {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+  }

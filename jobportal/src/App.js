@@ -1,7 +1,7 @@
 import Home from "./Pages/Home/Home";
 import Footer from "./Components/Footer/Footer"
 import Navbar from "./Components/Navbar/Navbar"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginPopup from "./Pages/LoginPopup/LoginPopup";
 import Layout from "./Pages/JobInternship/Layout/Layout"
@@ -10,13 +10,22 @@ import JobApplication from "./Pages/JobInternship/JobApplication/JobApplication"
 import MockTestLayout from "./Pages/MockTest/MockTestsLayout/MockTestsLayout";
 import MockTestListing from "./Pages/MockTest/MockTestsListing/MockTestsListing";
 import MockTestTake from "./Pages/MockTest/MockTestTake/MockTestTake";
+import Dashboard from "./Pages/Dashboard/DashBoard";
 
 function App() {
   const [showLogin, setShowLogin] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-
+  // Check if user is logged in (e.g., check localStorage for token)
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    const userData = localStorage.getItem("user");
+    if (token && userData) {
+      setIsLoggedIn(true);
+      setUser(JSON.parse(userData));
+    }
+  }, []);
 
   return (
     <>
@@ -38,16 +47,7 @@ function App() {
           <Route path="/apply/:jobId" element={<JobApplication />} />
           <Route path="/mocktestspage" element={<MockTestLayout />} />
           <Route path="/mocktests" element={<MockTestListing />} />
-          <Route
-            path="/mocktests/take/:mockTestId"
-            element={
-              <MockTestTake
-                setShowLogin={setShowLogin}
-                isLoggedIn={isLoggedIn}
-                user={user}
-              />
-            }
-          />
+          
         </Routes>
       </div>
       <Footer />
